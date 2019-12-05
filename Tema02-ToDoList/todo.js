@@ -38,7 +38,6 @@ var ToDo = /** @class */ (function () {
 var ToDoList = /** @class */ (function () {
     function ToDoList() {
         this.allTodos = new Array;
-        this.index = 0;
     }
     //adds new ToDo
     ToDoList.prototype.createTask = function (name, endDate, description) {

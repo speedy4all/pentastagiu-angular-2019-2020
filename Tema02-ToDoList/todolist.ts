@@ -51,7 +51,6 @@ class ToDo{
 class ToDoList{
 
     allTodos: ToDo[] = new Array;
-    index: number = 0;
 
     //adds new ToDo
     createTask(name: string, endDate: Date, description: string){
@@ -80,20 +79,19 @@ class ToDoList{
     }
 
     //TYPE: 1 - name , 2 - date, 3 - description
-    changeParam(index: number, type: number, parameter){
+    changeParam(index: number, type: number, parameter: any){
         switch(type){
             case 1:
-                this.allTodos[index].setName(parameter);
+                this.allTodos[index].setName(parameter as string);
                 break;
             case 2:
-                this.allTodos[index].setDate(parameter);
+                this.allTodos[index].setDate(parameter as Date);
                 break;
             case 3:
-                this.allTodos[index].setDescription(parameter);
-            break;
+                this.allTodos[index].setDescription(parameter as string);
+                break;
         }
     }
-
 }
 
 //EXECUTION
