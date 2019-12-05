@@ -1,4 +1,4 @@
-//model
+//MODEL
 var ToDo = /** @class */ (function () {
     function ToDo(name, endDate, description) {
         this.name = name;
@@ -6,9 +6,7 @@ var ToDo = /** @class */ (function () {
         this.finished = false;
         this.description = description;
     }
-    ToDo.prototype.finsh = function () {
-        this.finished = true;
-    };
+    //getters & setters
     ToDo.prototype.setName = function (name) {
         this.name = name;
     };
@@ -27,39 +25,44 @@ var ToDo = /** @class */ (function () {
     ToDo.prototype.getDescrption = function () {
         return this.description;
     };
+    //other methods
+    ToDo.prototype.finsh = function () {
+        this.finished = true;
+    };
     ToDo.prototype.listMe = function () {
         console.log(this.getName + " - " + this.getDate + " - " + this.getDescrption);
     };
     return ToDo;
 }());
-//controller
-var toDoList = /** @class */ (function () {
-    function toDoList() {
+//CONTROLLER
+var ToDoList = /** @class */ (function () {
+    function ToDoList() {
         this.allTodos = new Array;
         this.index = 0;
     }
     //adds new ToDo
-    toDoList.prototype.createItem = function (name, endDate, description) {
+    ToDoList.prototype.createTask = function (name, endDate, description) {
         this.allTodos.push(new ToDo(name, endDate, description));
     };
     //display all ToDos
-    toDoList.prototype.listAll = function () {
+    ToDoList.prototype.listAll = function () {
         console.table(this.allTodos);
     };
     //finish a task
-    toDoList.prototype.finishTask = function (index) {
+    ToDoList.prototype.finishTask = function (index) {
         this.allTodos[index].finsh();
     };
     //delete a task
-    toDoList.prototype.deleteTask = function (index) {
+    ToDoList.prototype.deleteTask = function (index) {
         this.allTodos.splice(index, 1);
     };
-    toDoList.prototype.notFinshed = function () {
+    //list all not finished tasks
+    ToDoList.prototype.notFinshed = function () {
         var table = this.allTodos.filter(function (t) { return !t.finished; });
         console.table(table);
     };
     //TYPE: 1 - name , 2 - date, 3 - description
-    toDoList.prototype.changeParam = function (index, type, parameter) {
+    ToDoList.prototype.changeParam = function (index, type, parameter) {
         switch (type) {
             case 1:
                 this.allTodos[index].setName(parameter);
@@ -72,15 +75,15 @@ var toDoList = /** @class */ (function () {
                 break;
         }
     };
-    return toDoList;
+    return ToDoList;
 }());
-//execution part
+//EXECUTION
 //1 - Create list
-var todos = new toDoList();
+var todos = new ToDoList();
 //2 - Create items
-todos.createItem("Do groceries", new Date("2019-12-13"), "Get something to eat");
-todos.createItem("Do laundry", new Date("2019-12-15"), "Wash your dirty clothes.");
-todos.createItem("Clean the room", new Date("2019-12-14"), "Make it look clean at least.");
+todos.createTask("Do groceries", new Date("2019-12-13"), "Get something to eat");
+todos.createTask("Do laundry", new Date("2019-12-15"), "Wash your dirty clothes.");
+todos.createTask("Clean the room", new Date("2019-12-14"), "Make it look clean at least.");
 //3 - Display items
 todos.listAll();
 //4 - Finish tasks

@@ -1,4 +1,4 @@
-//model
+//MODEL
 class ToDo{
     name: string;
     endDate: Date;
@@ -12,10 +12,7 @@ class ToDo{
         this.description = description;
     }
 
-    finsh(){
-        this.finished = true;
-    }
-
+    //getters & setters
     setName(name: string){
         this.name = name;
     }
@@ -40,19 +37,24 @@ class ToDo{
         return this.description;
     }
 
+    //other methods
+    finsh(){
+        this.finished = true;
+    }
+
     listMe(){
         console.log(`${this.getName} - ${this.getDate} - ${this.getDescrption}`);
     }
 }
 
-//controller
-class toDoList{
+//CONTROLLER
+class ToDoList{
 
     allTodos: ToDo[] = new Array;
     index: number = 0;
 
     //adds new ToDo
-    createItem(name: string, endDate: Date, description: string){
+    createTask(name: string, endDate: Date, description: string){
         this.allTodos.push(new ToDo(name,endDate,description));
     }
 
@@ -71,6 +73,7 @@ class toDoList{
         this.allTodos.splice(index, 1);
     }
 
+    //list all not finished tasks
     notFinshed(){
         var table = this.allTodos.filter(t => !t.finished);
         console.table(table);   
@@ -93,13 +96,13 @@ class toDoList{
 
 }
 
-//execution part
+//EXECUTION
 //1 - Create list
-const todos = new toDoList();
+const todos = new ToDoList();
 //2 - Create items
-todos.createItem("Do groceries", new Date("2019-12-13"),"Get something to eat");
-todos.createItem("Do laundry", new Date("2019-12-15"),"Wash your dirty clothes.");
-todos.createItem("Clean the room", new Date("2019-12-14"),"Make it look clean at least.");
+todos.createTask("Do groceries", new Date("2019-12-13"),"Get something to eat");
+todos.createTask("Do laundry", new Date("2019-12-15"),"Wash your dirty clothes.");
+todos.createTask("Clean the room", new Date("2019-12-14"),"Make it look clean at least.");
 //3 - Display items
 todos.listAll();
 //4 - Finish tasks
