@@ -1,10 +1,10 @@
 interface ITodo {
     taskName: string,
-        endDate: Date,
-        completed: boolean,
-        description: string,
-        finish(): any,
-        modify(taskName: string, endDate: Date, description: string): any
+    endDate: Date,
+    completed: boolean,
+    description: string,
+    finish(): any,
+    modify(taskName: string, endDate: Date, description: string): any
 }
 
 class Todo implements ITodo {
