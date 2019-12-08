@@ -1,97 +1,62 @@
-/**
- * 
- * Start of objects definition
- */
-
-
-/**
- * @returns {Object} Todos 
- * @param {Array<Todo>} todos optional array of todo objects
- */
-function Todos(todos = []) {
-    this.todos = todos;
-}
-
-/**
- * @param {Todo} todo
- */
-Todos.prototype.add = function(todo) {
-    this.todos.push(todo);
-}
-
-/**
- * @returns {Array<Todo>} list of todos
- */
-Todos.prototype.getAll = function() {
-    return this.todos;
-}
-
-/**
- * @displays table of not finished tasks
- */
-Todos.prototype.listNotFinished = function() {
-    const notFinished = this.todos.filter(t => !t.finished);
-    console.table(notFinished);
-}
-
-/**
- * @displays table with all tasks
- */
-Todos.prototype.listAll = function() {
-    console.table(this.todos);
-}
-
-/**
- * @param {number} index index of todo to finish
- */
-Todos.prototype.finishTask = function(index) {
-    this.todos[index].finish();
-}
-
-/**
- * 
- * @param {string} name 
- * @param {Date} date 
- */
-function Todo(name, date) {
-  this.name = name;
-  this.data = date;
-  this.finished = false;
-};
-
-/**
- * @close task
- */
-Todo.prototype.finish = function() {
-  this.finished = true;
-};
-
-/**
- * End of objects definition
- */
-
-
-/**
- * Start of program execution
- */ 
-
-const tasks = new Todos();
-
-tasks.add(new Todo("Go to shopping", new Date("2019-12-05")));
-tasks.add(new Todo("Go to movie", new Date("2019-12-12")));
-tasks.add(new Todo("Dentist appointment", new Date("2019-12-20")));
-
-
-tasks.finishTask(1);
-
-tasks.listAll();
-
-tasks.finishTask(2);
-
-tasks.listAll();
-
-tasks.listNotFinished();
-
-/**
- * End of program execution
- */ 
+var Task = /** @class */ (function () {
+    function Task(name, date, description, completed) {
+        this.name = name;
+        this.date = date;
+        this.description = description;
+        this.completed = completed;
+    }
+    Task.prototype.finish = function () {
+        this.completed = true;
+    };
+    Task.prototype.changeProperty = function (propName, newValue) {
+        this[propName] = newValue;
+    };
+    return Task;
+}());
+var ToDoList = /** @class */ (function () {
+    function ToDoList() {
+        this.tasks = [];
+    }
+    ToDoList.prototype.addTask = function (newTask) {
+        this.tasks.push(newTask);
+    };
+    ToDoList.prototype.finishTask = function (index) {
+        this.tasks[index].finish();
+    };
+    ToDoList.prototype.allTasks = function () {
+        console.table(this.tasks);
+    };
+    ToDoList.prototype.changeProp = function (index, propName, newValue) {
+        for (var props in this.tasks[index]) {
+            if (props == propName) {
+                this.tasks[index].changeProperty(propName, newValue);
+                return;
+            }
+        }
+        console.log(propName + " does not exist");
+    };
+    ToDoList.prototype.unfinishedTasks = function () {
+        var notFinished = this.tasks.filter(function (el) { return el.completed === false; });
+        console.table(notFinished);
+    };
+    ToDoList.prototype.removeUnfinishedTask = function (index) {
+        if (this.tasks[index].completed === false) {
+            this.tasks.splice(index, 1);
+            return;
+        }
+        console.log('Selected task is finished');
+    };
+    return ToDoList;
+}());
+var myList = new ToDoList();
+myList.addTask(new Task('Shopping', new Date('2019-12-20'), 'Buy hat', false));
+myList.addTask(new Task('Phone Call', new Date('2019-12-20'), 'Call uncle for birthday', false));
+myList.addTask(new Task('Pay bills', new Date('2019-12-20'), 'Pay gas bill', false));
+myList.addTask(new Task('Shopping', new Date('2019-12-20'), 'Buy washing machine', false));
+myList.allTasks();
+myList.finishTask(1);
+myList.allTasks();
+myList.changeProp(0, 'description', 'Buy hat and scarf');
+myList.allTasks();
+myList.removeUnfinishedTask(1);
+myList.unfinishedTasks();
