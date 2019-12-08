@@ -1,97 +1,69 @@
-/**
- * 
- * Start of objects definition
- */
-
-
-/**
- * @returns {Object} Todos 
- * @param {Array<Todo>} todos optional array of todo objects
- */
-function Todos(todos = []) {
-    this.todos = todos;
+class Todo {
+    constructor(taskName, endDate, completed, description) {
+        this.taskName = taskName;
+        this.endDate = endDate;
+        this.completed = false;
+        this.description = description;
+    }
+    finish() {
+        this.completed = true;
+    }
+    modify(taskName, endDate, description) {
+        this.taskName = taskName;
+        this.endDate = endDate;
+        this.description = description;
+    }
 }
-
-/**
- * @param {Todo} todo
- */
-Todos.prototype.add = function(todo) {
-    this.todos.push(todo);
+class TodoList {
+    constructor() {
+        this.allTodos = new Array;
+    }
+    // lista de task-uri
+    listTodos() {
+        console.table(this.allTodos);
+    }
+    // functie de adaugare
+    newTodo(taskName, endDate, description) {
+        let addItem = new Todo(taskName, endDate, false, description);
+        this.allTodos.push(addItem);
+    }
+    // functie de stergere
+    delTask(index) {
+        this.allTodos.splice(index, 1);
+        this.listTodos();
+    }
+    // functie de modificare
+    modTask(index, taskName, endDate, description) {
+        this.allTodos[index].taskName = taskName || this.allTodos[index].taskName;
+        this.allTodos[index].endDate = endDate || this.allTodos[index].endDate;
+        this.allTodos[index].description = description || this.allTodos[index].description;
+        this.listTodos();
+    }
+    // functie pentru finalizarea unui task
+    endTask(index) {
+        this.allTodos[index].finish();
+        this.listTodos();
+    }
+    // functie listare taskuri nefinalizate
+    listActiveTodos() {
+        const finished = this.allTodos.filter(t => !t.completed);
+        console.table(finished);
+        this.listTodos();
+    }
 }
-
-/**
- * @returns {Array<Todo>} list of todos
- */
-Todos.prototype.getAll = function() {
-    return this.todos;
-}
-
-/**
- * @displays table of not finished tasks
- */
-Todos.prototype.listNotFinished = function() {
-    const notFinished = this.todos.filter(t => !t.finished);
-    console.table(notFinished);
-}
-
-/**
- * @displays table with all tasks
- */
-Todos.prototype.listAll = function() {
-    console.table(this.todos);
-}
-
-/**
- * @param {number} index index of todo to finish
- */
-Todos.prototype.finishTask = function(index) {
-    this.todos[index].finish();
-}
-
-/**
- * 
- * @param {string} name 
- * @param {Date} date 
- */
-function Todo(name, date) {
-  this.name = name;
-  this.data = date;
-  this.finished = false;
-};
-
-/**
- * @close task
- */
-Todo.prototype.finish = function() {
-  this.finished = true;
-};
-
-/**
- * End of objects definition
- */
-
-
-/**
- * Start of program execution
- */ 
-
-const tasks = new Todos();
-
-tasks.add(new Todo("Go to shopping", new Date("2019-12-05")));
-tasks.add(new Todo("Go to movie", new Date("2019-12-12")));
-tasks.add(new Todo("Dentist appointment", new Date("2019-12-20")));
-
-
-tasks.finishTask(1);
-
-tasks.listAll();
-
-tasks.finishTask(2);
-
-tasks.listAll();
-
-tasks.listNotFinished();
-
-/**
- * End of program execution
- */ 
+// 1. Se va crea o lista de task-uri
+const tasks = new TodoList();
+// 2. Se vor adauga cel putin 3 task-uri in lista
+tasks.newTodo("Go to shopping", new Date("2019-12-05"), "Holiday shopping in Auchan");
+tasks.newTodo("Go to movie", new Date("2019-12-12"), "Winter premiere");
+tasks.newTodo("Dentist appointment", new Date("2019-12-20"), "Regular check-up");
+// 3. Se vor lista in consola toate task-urile
+tasks.listTodos();
+// 4. Se va finaliza un task
+tasks.endTask(2);
+// 6. Se va modifica un task nefinalizat
+tasks.modTask(0, undefined, new Date("2019-12-04"), "Earlier shopping in Kaufland");
+// 7. Se va sterge un task nefinalizat
+tasks.delTask(1);
+// 8. Se vor lista task-urile nefinalizate
+tasks.listActiveTodos();
