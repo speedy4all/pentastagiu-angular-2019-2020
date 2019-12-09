@@ -46,8 +46,8 @@ class TodoList {
     }
     // functie listare taskuri nefinalizate
     listActiveTodos() {
-        const finished = this.allTodos.filter(t => !t.completed);
-        console.table(finished);
+        const unFinished = this.allTodos.filter(t => !t.completed);
+        console.table(unFinished);
         this.listTodos();
     }
 }
