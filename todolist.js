@@ -28,19 +28,19 @@ class TodoList {
         this.allTodos.push(addItem);
     }
     // functie de stergere
-    delTask(index) {
+    delTodo(index) {
         this.allTodos.splice(index, 1);
         this.listTodos();
     }
     // functie de modificare
-    modTask(index, taskName, endDate, description) {
+    modTodo(index, taskName, endDate, description) {
         this.allTodos[index].taskName = taskName || this.allTodos[index].taskName;
         this.allTodos[index].endDate = endDate || this.allTodos[index].endDate;
         this.allTodos[index].description = description || this.allTodos[index].description;
         this.listTodos();
     }
     // functie pentru finalizarea unui task
-    endTask(index) {
+    endTodo(index) {
         this.allTodos[index].finish();
         this.listTodos();
     }
@@ -60,10 +60,10 @@ tasks.newTodo("Dentist appointment", new Date("2019-12-20"), "Regular check-up")
 // 3. Se vor lista in consola toate task-urile
 tasks.listTodos();
 // 4. Se va finaliza un task
-tasks.endTask(2);
+tasks.endTodo(2);
 // 6. Se va modifica un task nefinalizat
-tasks.modTask(0, undefined, new Date("2019-12-04"), "Earlier shopping in Kaufland");
+tasks.modTodo(0, undefined, new Date("2019-12-04"), "Earlier shopping in Kaufland");
 // 7. Se va sterge un task nefinalizat
-tasks.delTask(1);
+tasks.delTodo(1);
 // 8. Se vor lista task-urile nefinalizate
 tasks.listActiveTodos();
