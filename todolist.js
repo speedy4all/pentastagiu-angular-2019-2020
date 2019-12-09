@@ -8,11 +8,6 @@ class Todo {
     finish() {
         this.completed = true;
     }
-    modify(taskName, endDate, description) {
-        this.taskName = taskName;
-        this.endDate = endDate;
-        this.description = description;
-    }
 }
 class TodoList {
     constructor() {
