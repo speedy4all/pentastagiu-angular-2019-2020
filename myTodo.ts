@@ -2,7 +2,7 @@ class TodoList {
     private todos: Array<any> = [];
 
     addTodos(name: string,  date: Date, description: string, finished?: boolean): void {
-        if (name === '') {
+        if (!name) {
             return;
         }
         this.todos.push({
@@ -19,26 +19,23 @@ class TodoList {
     }
 
     modifyTask(index: number, newName: string): void {
-        const notFinished = this.todos.filter(todo => !todo.finished);
         let anotherName: string;
-        for (let task of notFinished) {
-            if (task.finished || typeof index !== 'number') {
-                return;
-            }
+        for (const task of this.todos) {
             anotherName = task.name;
         }
         anotherName = newName;
         this.todos[index].name = anotherName;
     }
 
-    deleteUnfinishedTask(index: number): Array<Object> {
+    deleteUnfinishedTask(index: number): void {
+        // Se comporta ciudat la alte abordari, am incercat sa fac splice direct pe this.todos si pe notFinished dar mereu imi elimina task-ul cu valoarea true. 
+        // Nici la indexare nu se comporta corect, de exemplu daca dadeam sa sterg al 2 lea task nefinalizat il stergea pe primul pentru ca incepea de la primul task care era deja true.
         const notFinished = this.todos.filter(todo => !todo.finished);
         notFinished.splice(index, 1);
         const finished = this.todos.filter(todo => todo.finished);
         const newArr = finished.concat(notFinished);
         this.todos = newArr;
-        const sortedTodo = this.todos.sort();
-        return sortedTodo;
+        
     }
 
     finishTask(task: number): void {
@@ -46,7 +43,7 @@ class TodoList {
     }
 
     getAllTodos(): void {
-        console.table(this.todos.filter(todo => todo.name))
+        console.table(this.todos);
     }
 
 }

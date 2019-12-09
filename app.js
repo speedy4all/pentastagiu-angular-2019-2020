@@ -3,7 +3,7 @@ var TodoList = /** @class */ (function () {
         this.todos = [];
     }
     TodoList.prototype.addTodos = function (name, date, description, finished) {
-        if (name === '') {
+        if (!name) {
             return;
         }
         this.todos.push({
@@ -18,32 +18,28 @@ var TodoList = /** @class */ (function () {
         console.table(notFinished);
     };
     TodoList.prototype.modifyTask = function (index, newName) {
-        var notFinished = this.todos.filter(function (todo) { return !todo.finished; });
         var anotherName;
-        for (var _i = 0, notFinished_1 = notFinished; _i < notFinished_1.length; _i++) {
-            var task = notFinished_1[_i];
-            if (task.finished || typeof index !== 'number') {
-                return;
-            }
+        for (var _i = 0, _a = this.todos; _i < _a.length; _i++) {
+            var task = _a[_i];
             anotherName = task.name;
         }
         anotherName = newName;
         this.todos[index].name = anotherName;
     };
     TodoList.prototype.deleteUnfinishedTask = function (index) {
+        // Se comporta ciudat la alte abordari, am incercat sa fac splice direct pe this.todos si pe notFinished dar mereu imi elimina task-ul cu valoarea true. 
+        // Nici la indexare nu se comporta corect, de exemplu daca dadeam sa sterg al 2 lea task nefinalizat il stergea pe primul pentru ca incepea de la primul task care era deja true.
         var notFinished = this.todos.filter(function (todo) { return !todo.finished; });
         notFinished.splice(index, 1);
         var finished = this.todos.filter(function (todo) { return todo.finished; });
         var newArr = finished.concat(notFinished);
         this.todos = newArr;
-        var sortedTodo = this.todos.sort();
-        return sortedTodo;
     };
     TodoList.prototype.finishTask = function (task) {
         this.todos[task].finished = true;
     };
     TodoList.prototype.getAllTodos = function () {
-        console.table(this.todos.filter(function (todo) { return todo.name; }));
+        console.table(this.todos);
     };
     return TodoList;
 }());
