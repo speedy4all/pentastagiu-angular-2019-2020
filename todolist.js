@@ -9,7 +9,11 @@ var Task = /** @class */ (function () {
         this.completed = true;
     };
     Task.prototype.changeProperty = function (propName, newValue) {
-        this[propName] = newValue;
+        if (this[propName]) {
+            this[propName] = newValue;
+            return;
+        }
+        console.log("Property \"" + propName + "\" does not exist");
     };
     return Task;
 }());
@@ -27,20 +31,24 @@ var ToDoList = /** @class */ (function () {
         console.table(this.tasks);
     };
     ToDoList.prototype.changeProp = function (index, propName, newValue) {
-        for (var props in this.tasks[index]) {
-            if (props == propName) {
-                this.tasks[index].changeProperty(propName, newValue);
-                return;
-            }
+        if (this.tasks[index]) {
+            this.tasks[index].changeProperty(propName, newValue);
+            return;
         }
-        console.log(propName + " does not exist");
+        // for (let props in this.tasks[index]) {
+        //     if (props == propName){
+        //         this.tasks[index].changeProperty(propName, newValue)
+        //         return;
+        //     }
+        // }
+        console.log("Task does not exist");
     };
     ToDoList.prototype.unfinishedTasks = function () {
         var notFinished = this.tasks.filter(function (el) { return el.completed === false; });
         console.table(notFinished);
     };
     ToDoList.prototype.removeUnfinishedTask = function (index) {
-        if (this.tasks[index].completed === false) {
+        if (this.tasks[index] && this.tasks[index].completed === false) {
             this.tasks.splice(index, 1);
             return;
         }
@@ -58,5 +66,5 @@ myList.finishTask(1);
 myList.allTasks();
 myList.changeProp(0, 'description', 'Buy hat and scarf');
 myList.allTasks();
-myList.removeUnfinishedTask(1);
+myList.removeUnfinishedTask(2);
 myList.unfinishedTasks();

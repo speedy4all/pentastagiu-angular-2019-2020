@@ -12,9 +12,12 @@ class Task implements ITask {
         this.completed = true;
     }
     changeProperty(propName: string, newValue: string) {
-        this[propName] = newValue;
+        if (this[propName]) {
+            this[propName] = newValue;   
+            return;
+        }
+        console.log(`Property "${propName}" does not exist`);
     }
-
 }
 
 class ToDoList {
@@ -29,20 +32,18 @@ class ToDoList {
         console.table(this.tasks);
     }
     changeProp(index: number, propName: string, newValue: string) {
-        for (let props in this.tasks[index]) {
-            if (props == propName){
-                this.tasks[index].changeProperty(propName, newValue)
-                return;
-            }
+        if (this.tasks[index]) {
+            this.tasks[index].changeProperty(propName, newValue);
+            return
         }
-        console.log(`${propName} does not exist`);
+        console.log(`Task does not exist`);
     }
     unfinishedTasks() {
         const notFinished = this.tasks.filter( el => el.completed === false);
         console.table(notFinished);
     }
     removeUnfinishedTask(index: number) {
-        if (this.tasks[index].completed === false) {
+        if (this.tasks[index] && this.tasks[index].completed === false) {
             this.tasks.splice(index, 1);
             return;
         }
