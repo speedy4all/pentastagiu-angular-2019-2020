@@ -40,10 +40,10 @@ class TodoList {
         console.table(this.allTodos);
     }
     //functie modificare task
-    modifyTask(index: number, taskName ? : string, endDate ? : Date, description ? : string, ) {
-        this.allTodos[index].taskName = taskName || this.allTodos[index].taskName;
-        this.allTodos[index].endDate = endDate || this.allTodos[index].endDate;
-        this.allTodos[index].description = description || this.allTodos[index].description;
+    modifyTask(index:number, taskName:string = this.allTodos[index].taskName, endDate:Date = this.allTodos[index].endDate , description:string = this.allTodos[index].description,){
+        this.allTodos[index].taskName = taskName;
+        this.allTodos[index].endDate = endDate;
+        this.allTodos[index].description = description;
         this.listTodos();
     }
     //functie finalizare task    
@@ -60,8 +60,6 @@ class TodoList {
     listUnfinishedTodos() {
         const finished = this.allTodos.filter(t => !t.completed);
         console.table(finished);
-        this.listTodos();
-
     }
 }
 //1.Creare lista taskuri
@@ -75,7 +73,7 @@ todos.listTodos();
 //4.Finalizare task
 todos.finishTask(2);
 //5.Modificare task
-todos.modifyTask(1, undefined, undefined, "Loud af");
+todos.modifyTask(1,undefined, null, "Loud af");
 //6.Stergere task
 todos.deleteTask(0);
 //7.Listare taskuri nefinalizate

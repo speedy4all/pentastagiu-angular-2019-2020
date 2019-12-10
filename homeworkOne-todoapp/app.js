@@ -34,9 +34,12 @@ var TodoList = /** @class */ (function () {
     };
     //functie modificare task
     TodoList.prototype.modifyTask = function (index, taskName, endDate, description) {
-        this.allTodos[index].taskName = taskName || this.allTodos[index].taskName;
-        this.allTodos[index].endDate = endDate || this.allTodos[index].endDate;
-        this.allTodos[index].description = description || this.allTodos[index].description;
+        if (taskName === void 0) { taskName = this.allTodos[index].taskName; }
+        if (endDate === void 0) { endDate = this.allTodos[index].endDate; }
+        if (description === void 0) { description = this.allTodos[index].description; }
+        this.allTodos[index].taskName = taskName;
+        this.allTodos[index].endDate = endDate;
+        this.allTodos[index].description = description;
         this.listTodos();
     };
     //functie finalizare task    
@@ -53,7 +56,6 @@ var TodoList = /** @class */ (function () {
     TodoList.prototype.listUnfinishedTodos = function () {
         var finished = this.allTodos.filter(function (t) { return !t.completed; });
         console.table(finished);
-        this.listTodos();
     };
     return TodoList;
 }());
@@ -68,7 +70,7 @@ todos.listTodos();
 //4.Finalizare task
 todos.finishTask(2);
 //5.Modificare task
-todos.modifyTask(1, undefined, undefined, "Loud af");
+todos.modifyTask(1, undefined, null, "Loud af");
 //6.Stergere task
 todos.deleteTask(0);
 //7.Listare taskuri nefinalizate
