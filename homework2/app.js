@@ -1,3 +1,5 @@
+let System = require('systemjs');
+
 System.register("models/IToDo", [], function (exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
@@ -101,7 +103,7 @@ System.register("classes/ToDoList", ["classes/ToDo"], function (exports_3, conte
 });
 System.register("TodoHomework", ["classes/ToDoList"], function (exports_4, context_4) {
     "use strict";
-    var ToDoList_1, todos;
+    var ToDoList_1, main;
     var __moduleName = context_4 && context_4.id;
     return {
         setters: [
@@ -110,26 +112,43 @@ System.register("TodoHomework", ["classes/ToDoList"], function (exports_4, conte
             }
         ],
         execute: function () {
-            todos = new ToDoList_1.ToDoList();
-            // Adding todos
-            todos.addToDo('Morning routine', 'Woke up, drink my coffee then get redy for work', new Date('12/12/2019'));
-            todos.addToDo('Work', 'Finish those scripts', new Date());
-            todos.addToDo('Lunch', 'Find somethig to eat', new Date());
-            todos.addToDo('Relax', 'Watch a movie or something', new Date());
-            // Printing todos
-            todos.printTodos();
-            //Modifying toods 
-            todos.modifyToDo(0, "Well, I think I'm gonna be late for work", "Late for work");
-            todos.modifyToDo(2, "I think I'm gonna order something");
-            todos.printTodos();
-            // Finishing
-            todos.setFinished(3);
-            todos.printTodos();
-            //Deleteting
-            todos.deleteToDo(1);
-            todos.printTodos();
-            //Ptinting the unfinished todos
-            todos.printUnfinished();
+            exports_4("main", main = () => {
+                let todos = new ToDoList_1.ToDoList();
+                // Adding todos
+                todos.addToDo('Morning routine', 'Woke up, drink my coffee then get redy for work', new Date('12/12/2019'));
+                todos.addToDo('Work', 'Finish those scripts', new Date());
+                todos.addToDo('Lunch', 'Find somethig to eat', new Date());
+                todos.addToDo('Relax', 'Watch a movie or something', new Date());
+                // Printing todos
+                todos.printTodos();
+                //Modifying toods 
+                todos.modifyToDo(0, "Well, I think I'm gonna be late for work", "Late for work");
+                todos.modifyToDo(2, "I think I'm gonna order something");
+                todos.printTodos();
+                // Finishing
+                todos.setFinished(3);
+                todos.printTodos();
+                //Deleteting
+                todos.deleteToDo(1);
+                todos.printTodos();
+                //Ptinting the unfinished todos
+                todos.printUnfinished();
+            });
+        }
+    };
+});
+System.register("main", ["TodoHomework"], function (exports_5, context_5) {
+    "use strict";
+    var TodoHomework_1;
+    var __moduleName = context_5 && context_5.id;
+    return {
+        setters: [
+            function (TodoHomework_1_1) {
+                TodoHomework_1 = TodoHomework_1_1;
+            }
+        ],
+        execute: function () {
+            TodoHomework_1.main();
         }
     };
 });

@@ -1,31 +1,34 @@
 import { ToDoList } from './classes/ToDoList'
 
-let todos = new ToDoList();
 
-// Adding todos
-todos.addToDo('Morning routine', 'Woke up, drink my coffee then get redy for work', new Date('12/12/2019'));
-todos.addToDo('Work', 'Finish those scripts', new Date());
-todos.addToDo('Lunch', 'Find somethig to eat', new Date());
-todos.addToDo('Relax', 'Watch a movie or something', new Date());
+export let main = () => {
+    let todos = new ToDoList();
 
-// Printing todos
-todos.printTodos();
+    // Adding todos
+    todos.addToDo('Morning routine', 'Woke up, drink my coffee then get redy for work', new Date('12/12/2019'));
+    todos.addToDo('Work', 'Finish those scripts', new Date());
+    todos.addToDo('Lunch', 'Find somethig to eat', new Date());
+    todos.addToDo('Relax', 'Watch a movie or something', new Date());
 
-//Modifying toods 
-todos.modifyToDo(0, "Well, I think I'm gonna be late for work", "Late for work");
-todos.modifyToDo(2, "I think I'm gonna order something")
+    // Printing todos
+    todos.printTodos();
 
-todos.printTodos();
+    //Modifying toods 
+    todos.modifyToDo(0, "Well, I think I'm gonna be late for work", "Late for work");
+    todos.modifyToDo(2, "I think I'm gonna order something")
 
-// Finishing
-todos.setFinished(3);
+    todos.printTodos();
 
-todos.printTodos();
+    // Finishing
+    todos.setFinished(3);
 
-//Deleteting
-todos.deleteToDo(1);
+    todos.printTodos();
 
-todos.printTodos();
+    //Deleteting
+    todos.deleteToDo(1);
 
-//Ptinting the unfinished todos
-todos.printUnfinished();
+    todos.printTodos();
+
+    //Ptinting the unfinished todos
+    todos.printUnfinished();
+}
