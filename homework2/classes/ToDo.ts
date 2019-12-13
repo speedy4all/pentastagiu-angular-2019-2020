@@ -4,7 +4,7 @@ export class ToDo implements ITodo {
 
     finished: boolean;
 
-    constructor(public nume: string, public descriere: string, public data: Date,) {
+    constructor(public nume: string, public descriere: string, public data: Date) {
         this.finished = false;
     };
 

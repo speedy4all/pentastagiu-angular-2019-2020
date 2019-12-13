@@ -1,6 +1,6 @@
 export interface ITodo {
     nume: string,
     descriere: string,
-    data: Date;
+    data: Date,
     finished: boolean,
 }
