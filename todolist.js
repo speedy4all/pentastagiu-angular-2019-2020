@@ -11,7 +11,7 @@ class Todo {
 }
 class TodoList {
     constructor() {
-        this.allTodos = new Array;
+        this.allTodos = new Array(); // corectat eroare tema 1
     }
     // lista de task-uri
     listTodos() {
@@ -43,7 +43,7 @@ class TodoList {
     listActiveTodos() {
         const unFinished = this.allTodos.filter(t => !t.completed);
         console.table(unFinished);
-        this.listTodos();
+        // this.listTodos(); - anulat pe baza observatiilor la tema 1
     }
 }
 // 1. Se va crea o lista de task-uri
