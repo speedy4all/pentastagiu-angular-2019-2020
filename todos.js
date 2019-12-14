@@ -16,6 +16,26 @@ Todos.prototype.add = function(todo) {
 };
 
 /**
+ * @param {number} index index of todo to remove
+ */
+Todos.prototype.removeByIndex = function(index) {
+  if(this.todos[index].finished){
+    throw 'You cannot remove a finished task';
+  }
+  else{
+    this.todos.splice(index,1);
+  }
+};
+
+/**
+ * @param {number} index index of todo to find
+ * @param {string} name of todo to modify
+ */
+Todos.prototype.modifyName = function(index, name) {
+  this.todos[index].name = name;
+};
+
+/**
  * @returns {Array<Todo>} list of todos
  */
 Todos.prototype.getAll = function() {
@@ -23,18 +43,21 @@ Todos.prototype.getAll = function() {
 };
 
 /**
- * @displays table of not finished tasks
+ * @displays table of unfinished tasks
  */
 Todos.prototype.listNotFinished = function() {
-  const notFinished = this.todos.filter(t => !t.finished);
-  console.table(notFinished);
+  let today = new Date();
+  const notFinished = this.todos.filter(t => !t.finished && t.date.getMonth()==today.getMonth()
+                                        && t.date.getDate() == today.getDate());
+  printList(notFinished);
 };
 
 /**
  * @displays table with all tasks
  */
 Todos.prototype.listAll = function() {
-  printList(this.todos);
+  const tasks = this.todos;
+  printList(tasks);
 };
 
 /**

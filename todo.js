@@ -2,18 +2,20 @@
  *
  * @param {string} name
  * @param {Date} date
+ * @param {string} description
  */
-function Todo(name, date) {
-    this.name = name;
-    this.data = date;
-    this.finished = false;
-  }
-  
-  /**
-   * @close task
-   */
-  Todo.prototype.finish = function() {
-    this.finished = true;
-  };
+function Todo(name, date, description) {
+  this.name = name;
+  this.date = date;
+  this.finished = false;
+  this.description = description;
+}
 
-  exports.Todo = Todo;
+/**
+ * @close task
+ */
+Todo.prototype.finish = function() {
+  this.finished = true;
+};
+
+exports.Todo = Todo;
