@@ -10,6 +10,6 @@ tasks.finalize(2);
 tasks.print();
 tasks.modify(1, "Go to cinema", null, undefined);
 tasks.print();
-tasks["delete"](0);
+tasks["delete"](7);
 tasks.print();
 tasks.printNotFinished();
