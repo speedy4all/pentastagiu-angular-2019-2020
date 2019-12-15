@@ -26,19 +26,19 @@ class Todos {
     }
 
     delete(index: number) {
-        if (index > -1 && index < this.todos.length) {
+        if (index > -1) {
             this.todos.splice(index, 1);
         }
     }
 
     modify(index: number, name: string, date: Date, description: string) {
-        if (index > -1 && index < this.todos.length) {
+        if (index > -1) {
             this.todos[index].modify(name, date, description);
         }
     }
 
     finalize(index: number) {
-        if (index > -1 && index < this.todos.length) {
+        if (index > -1) {
             this.todos[index].finalize();
         }
     }
