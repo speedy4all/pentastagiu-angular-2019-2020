@@ -6,13 +6,13 @@ class Todo {
     }
 
     modify(name: string, date: Date, description: string) {
-        if (name !== undefined) {
+        if (name !== undefined && name !== null) {
             this.name = name;
         }
-        if (date !== undefined) {
+        if (date !== undefined && name !== null) {
             this.date = date;
         }
-        if (description !== undefined) {
+        if (description !== undefined && name !== null) {
             this.description = description;
         }
     }
@@ -26,19 +26,19 @@ class Todos {
     }
 
     delete(index: number) {
-        if (index > -1) {
+        if (index > -1 && index < this.todos.length) {
             this.todos.splice(index, 1);
         }
     }
 
     modify(index: number, name: string, date: Date, description: string) {
-        if (index > -1) {
+        if (index > -1 && index < this.todos.length) {
             this.todos[index].modify(name, date, description);
         }
     }
 
     finalize(index: number) {
-        if (index > -1) {
+        if (index > -1 && index < this.todos.length) {
             this.todos[index].finalize();
         }
     }
@@ -61,7 +61,7 @@ tasks.add(new Todo("Buy fitness membership ", new Date("2020-03-02"), false, "Cu
 tasks.print();
 tasks.finalize(2);
 tasks.print();
-tasks.modify(1, "Go to cinema", undefined, undefined);
+tasks.modify(1, "Go to cinema", null, undefined);
 tasks.print();
 tasks.delete(0);
 tasks.print();
