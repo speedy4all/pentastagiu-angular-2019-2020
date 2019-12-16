@@ -12,12 +12,12 @@ export class Todos {
     }
 
     finishTask(index: number) {
-        if(index < this.taskList.length)
+        if(index < this.taskList.length && index >= 0)
             this.taskList[index].finish();
     }
 
     deleteTask(index: number) {
-        if(index < this.taskList.length) {
+        if(index < this.taskList.length && index >= 0) {
             if(this.taskList[index].finished == false) 
                 this.taskList.splice(index);
             else
@@ -42,7 +42,7 @@ export class Todos {
     }
 
     modify(index: number, modified: any, target: string) {
-        if(index < this.taskList.length)
+        if(index < this.taskList.length && index >= 0)
             this.taskList[index].modify(modified, target);
         else
             console.log("Index invalid!");
