@@ -26,7 +26,7 @@ var ToDoList = /** @class */ (function () {
         var table = this.allTodos.filter(function (t) { return !t.finished; });
         console.table(table);
     };
-    //TYPE: 1 - name , 2 - date, 3 - description
+    //Am modificat functia sa fie mai intuitiva
     ToDoList.prototype.changeParam = function (index, type, parameter) {
         switch (type) {
             case "name":

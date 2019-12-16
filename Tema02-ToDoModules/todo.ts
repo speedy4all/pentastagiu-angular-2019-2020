@@ -11,7 +11,7 @@ export class ToDo{
         this.description = description;
     }
 
-    //getters & setters
+    //KEPT SETTERS FOR ONE METHOD
     setName(name: string){
         this.name = name;
     }
@@ -22,18 +22,6 @@ export class ToDo{
 
     setDescription(description: string){
         this.description = description;
-    }
-
-    getName(){
-        return this.name;
-    }
-
-    getDate(){
-        return this.endDate;
-    }
-
-    getDescrption(){
-        return this.description;
     }
 
     //other methods

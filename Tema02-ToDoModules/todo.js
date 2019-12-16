@@ -7,7 +7,7 @@ var ToDo = /** @class */ (function () {
         this.finished = false;
         this.description = description;
     }
-    //getters & setters
+    //KEPT SETTERS FOR ONE METHOD
     ToDo.prototype.setName = function (name) {
         this.name = name;
     };
@@ -16,15 +16,6 @@ var ToDo = /** @class */ (function () {
     };
     ToDo.prototype.setDescription = function (description) {
         this.description = description;
-    };
-    ToDo.prototype.getName = function () {
-        return this.name;
-    };
-    ToDo.prototype.getDate = function () {
-        return this.endDate;
-    };
-    ToDo.prototype.getDescrption = function () {
-        return this.description;
     };
     //other methods
     ToDo.prototype.finsh = function () {
