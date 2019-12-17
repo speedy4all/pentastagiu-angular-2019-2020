@@ -12,6 +12,18 @@ function Todos(todos = []) {
 }
 
 /**
+ *
+ * @param {string} name
+ * @param {Date} date
+ */
+function Todo(name, date, description) {
+  this.name = name;
+  this.data = date;
+  this.description = description;
+  this.finished = false;
+}
+
+/**
  * @param {Todo} todo
  */
 Todos.prototype.add = function(todo) {
@@ -50,18 +62,6 @@ Todos.prototype.listAll = function() {
 Todos.prototype.finishTask = function(index) {
   this.todos[index].finish();
 };
-
-/**
- *
- * @param {string} name
- * @param {Date} date
- */
-function Todo(name, date, description) {
-  this.name = name;
-  this.data = date;
-  this.description = description;
-  this.finished = false;
-}
 
 /**
  * @close task
