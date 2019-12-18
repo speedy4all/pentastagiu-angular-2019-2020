@@ -31,8 +31,8 @@ Todos.prototype.removeByIndex = function(index) {
  * @param {number} index index of todo to find
  * @param {string} name of todo to modify
  */
-Todos.prototype.modifyName = function(index, name) {
-  this.todos[index].name = name;
+Todos.prototype.modifyName = function(index,name) {
+  this.todos[index].editName(name);
 };
 
 /**

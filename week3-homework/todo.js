@@ -18,4 +18,11 @@ Todo.prototype.finish = function() {
   this.finished = true;
 };
 
+/**
+ * @close task
+ */
+Todo.prototype.editName = function(name) {
+  this.name = name;
+};
+
 exports.Todo = Todo;
