@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Task_1 = require("./Task");
+var TaskList_1 = require("./TaskList");
+var taskList = new TaskList_1.TaskList();
+var task1 = new Task_1.Task('Christmas party', new Date('2019-12-25'), 'description 1');
+var task2 = new Task_1.Task('First Exam', new Date('2020-01-19'), 'description 2');
+var task3 = new Task_1.Task('Mothers Day', new Date('2020-03-08'), 'description 3');
+taskList.addTask(task1);
+taskList.addTask(task2);
+taskList.addTask(task3);
+taskList.finishTask(task2);
+taskList.printAll();
+taskList.modifyTask(task1, 'name', 'Task Updated');
+taskList.printAll();
+taskList.deleteTask(task3);
+taskList.printAll();
+taskList.printAllUnfinished();
