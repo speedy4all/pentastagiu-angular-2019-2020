@@ -6,13 +6,13 @@ class Todo {
     }
 
     modify(name: string, date: Date, description: string) {
-        if (name !== undefined) {
+        if (name !== undefined && name !== null) {
             this.name = name;
         }
-        if (date !== undefined) {
+        if (date !== undefined && name !== null) {
             this.date = date;
         }
-        if (description !== undefined) {
+        if (description !== undefined && name !== null) {
             this.description = description;
         }
     }
@@ -61,7 +61,7 @@ tasks.add(new Todo("Buy fitness membership ", new Date("2020-03-02"), false, "Cu
 tasks.print();
 tasks.finalize(2);
 tasks.print();
-tasks.modify(1, "Go to cinema", undefined, undefined);
+tasks.modify(1, "Go to cinema", null, undefined);
 tasks.print();
 tasks.delete(0);
 tasks.print();
