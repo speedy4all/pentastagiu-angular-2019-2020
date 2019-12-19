@@ -1,0 +1,12 @@
+.todo-item-container{
+
+  height: 50px;
+
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: lightgray;
+}
+
+.todo-item-container:hover{
+  background-color: white;
+}

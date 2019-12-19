@@ -9,6 +9,7 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
   declarations: [TodoItemComponent, TodoAddComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [TodoItemComponent, TodoAddComponent]
 })
 export class SharedComponentsModule { }
