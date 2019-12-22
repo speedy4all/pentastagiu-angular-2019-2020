@@ -1,0 +1,9 @@
+:host {
+    position: relative;
+    display: block;
+    height: 100%;
+}
+div.shell-container{
+    height: calc(100% - 90px);
+    padding: 90px 0 0 0 ;
+}

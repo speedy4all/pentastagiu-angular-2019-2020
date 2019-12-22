@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    -webkit-font-smooting: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background-color: #eeeeee;    
+}
