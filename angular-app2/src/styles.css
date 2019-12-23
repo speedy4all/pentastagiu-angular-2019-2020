@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: o;
+    border: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100vw;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background-color: #eeeeee;
+}

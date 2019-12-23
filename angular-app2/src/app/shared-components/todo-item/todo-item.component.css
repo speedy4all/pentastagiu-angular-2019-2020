@@ -1,0 +1,43 @@
+.btn {
+    display: inline-block;
+    border: none;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.btn-success1 {
+    color: #fff;
+    background-color: #ff6347;
+    border-color: #ff6347;
+}
+
+.btn-success: hover,
+.btn-success: focus,
+.btn-success: active {
+    color: #fff;
+    background-color: #449d44;
+    border-color: #398439;
+}
