@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+* { 
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html, body {
+    width: 100vw;
+    min-height: 100vw;
+    font-size: 15px;
+    -webkit-font-smothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background-color: #eeeeee;
+}
