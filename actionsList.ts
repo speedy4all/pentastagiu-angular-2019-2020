@@ -8,10 +8,6 @@ class Action implements IToDo {
     constructor(public name: string, public date: Date, public finished: boolean) {
     }
 
-    public finishTask() {
-        this.finish();
-    }
-
     private finish() {
         this.finished = true;
     }
@@ -20,8 +16,8 @@ class Action implements IToDo {
 class ActionsList {
     public toDos = [];
 
-    public addToDo(Action: object) {
-        this.toDos.push(Action);
+    public addToDo(action: object) {
+        this.toDos.push(action);
     }
 
     public getToDos() {
@@ -31,6 +27,16 @@ class ActionsList {
     public listNotFinished() {
         const notFinished = this.toDos.filter(t => !t.finished);
         console.table(notFinished);
+    }
+
+    public finishTask(action) {
+        if (!action.finished) {
+            for (var i = 0; i < this.toDos.length; i++) {
+                if (this.toDos[i].name === action.name) {
+                    action.finish(this.toDos[i]);
+                }
+            }
+        }
     }
 
     public listAll() {
@@ -43,6 +49,14 @@ class ActionsList {
                 if (this.toDos[i].name === action.name) {
                     this.toDos.splice(i, 1)
                 }
+            }
+        }
+    }
+
+    public modifyToDo(action, name) {
+        for (var i = 0; i < this.toDos.length; i++) {
+            if (this.toDos[i].name === action.name) {
+                this.toDos[i].name = name;
             }
         }
     }
@@ -59,10 +73,8 @@ list.addToDo(secondAction);
 list.addToDo(thirdAction);
 list.addToDo(fourthAction);
 list.listAll();
-thirdAction.finishTask();
-fourthAction.name = 'Eat dinner';
+list.finishTask(thirdAction);
+list.modifyToDo(fourthAction, 'Eat dinner');
 list.listNotFinished();
 list.removeToDo(fourthAction);
 list.listAll();
-
-// Nota: nu sunt 100% sigura ca este implementat cum trebuie deoarece am folosit Typescript extrem de putin pana acum :)

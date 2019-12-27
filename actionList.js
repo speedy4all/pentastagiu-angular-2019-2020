@@ -4,9 +4,6 @@ var Action = /** @class */ (function () {
         this.date = date;
         this.finished = finished;
     }
-    Action.prototype.finishTask = function () {
-        this.finish();
-    };
     Action.prototype.finish = function () {
         this.finished = true;
     };
@@ -16,8 +13,8 @@ var ActionsList = /** @class */ (function () {
     function ActionsList() {
         this.toDos = [];
     }
-    ActionsList.prototype.addToDo = function (Action) {
-        this.toDos.push(Action);
+    ActionsList.prototype.addToDo = function (action) {
+        this.toDos.push(action);
     };
     ActionsList.prototype.getToDos = function () {
         return this.toDos;
@@ -25,6 +22,15 @@ var ActionsList = /** @class */ (function () {
     ActionsList.prototype.listNotFinished = function () {
         var notFinished = this.toDos.filter(function (t) { return !t.finished; });
         console.table(notFinished);
+    };
+    ActionsList.prototype.finishTask = function (action) {
+        if (!action.finished) {
+            for (var i = 0; i < this.toDos.length; i++) {
+                if (this.toDos[i].name === action.name) {
+                    action.finish(this.toDos[i]);
+                }
+            }
+        }
     };
     ActionsList.prototype.listAll = function () {
         console.table(this.toDos);
@@ -35,6 +41,13 @@ var ActionsList = /** @class */ (function () {
                 if (this.toDos[i].name === action.name) {
                     this.toDos.splice(i, 1);
                 }
+            }
+        }
+    };
+    ActionsList.prototype.modifyToDo = function (action, name) {
+        for (var i = 0; i < this.toDos.length; i++) {
+            if (this.toDos[i].name === action.name) {
+                this.toDos[i].name = name;
             }
         }
     };
@@ -50,9 +63,8 @@ list.addToDo(secondAction);
 list.addToDo(thirdAction);
 list.addToDo(fourthAction);
 list.listAll();
-thirdAction.finishTask();
-fourthAction.name = 'Eat dinner';
+list.finishTask(thirdAction);
+list.modifyToDo(fourthAction, 'Eat dinner');
 list.listNotFinished();
 list.removeToDo(fourthAction);
 list.listAll();
-// Nota: nu sunt 100% sigura ca este implementat cum trebuie deoarece am folosit Typescript extrem de putin pana acum :)
