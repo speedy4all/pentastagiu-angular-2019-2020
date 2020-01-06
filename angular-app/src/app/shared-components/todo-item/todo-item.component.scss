@@ -1,0 +1,15 @@
+.itemContainer {
+    height: 30px;
+    border-bottom: solid 1px;
+    border-color: grey;
+}
+
+p {
+    margin: 0;
+    padding: 5px;
+}
+
+.itemContainer:hover {
+    cursor: pointer;
+    background-color: grey;
+}
