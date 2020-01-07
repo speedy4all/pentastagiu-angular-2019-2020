@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ShellModule } from 'src/shell/shell.module';
+import { ShellModule } from .;
 import { HomeModule } from './home/home.module';
 import { SharedComponentsModule } from './shared-components/shared-components.module';
 
