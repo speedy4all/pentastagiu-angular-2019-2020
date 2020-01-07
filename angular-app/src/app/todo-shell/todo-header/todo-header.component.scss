@@ -1,0 +1,24 @@
+:host {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 80px;
+}
+div.header-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    background-color: #000080;
+    border-top: 0.2rem solid #000080;
+    border-bottom: 3px double #fff;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    font-size: 2rem;
+}
