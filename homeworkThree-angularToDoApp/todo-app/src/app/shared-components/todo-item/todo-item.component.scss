@@ -1,0 +1,23 @@
+:host {
+    border-top: .5em solid purple;
+    border-bottom: .2em solid rgb(149, 77, 149);
+    border-radius: 5px;
+    margin: 1px;
+    padding: 6px;
+}
+
+.action-container{
+    display: flex;
+    padding: 1px;
+    margin: 3px;
+    flex-flow: row-reverse;
+    position: relative;
+}
+
+.button-done {
+    margin: 0 1em;
+    background-color: rgba(46, 139, 86, 0.37);
+}
+.button-delete {
+    background-color: rgba(255, 0, 0, 0.342);
+}
