@@ -14,7 +14,8 @@ import { SharedComponentsModule } from './shared-components/shared-components.mo
     BrowserModule,
     ShellModule,
     HomeModule
-  ],
+  ]
+  ,
   providers: [],
   bootstrap: [AppComponent]
 })
