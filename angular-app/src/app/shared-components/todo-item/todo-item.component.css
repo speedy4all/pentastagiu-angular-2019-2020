@@ -1,0 +1,29 @@
+.todo-item-container:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, alpha.1);
+}
+
+.todo-item-container:hover.action-container{
+    display: block;
+}
+
+.action-container.button{
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 8px;
+    color: #ffffff;
+    background-color: transparent;
+    outline: none;
+}
+
+.action-container.button:hover{
+    cursor: pointer;
+}
+
+.action-container.button.done{
+    background-color:yellow;
+}
+
+.action-container.button.delete{
+    background-color:red ;
+}
