@@ -11,8 +11,8 @@
     </div>
 
     <form class="form" [formGroup]="formOne" (ngSubmit)="saveForm(formOne.value)">
-      <input placeholder="E-Mail" formControlName="email"/>
-      <input placeholder="Password" type="password" formControlName="password"/>
+      <input placeholder="E-Mail" formControlName="email" required/>
+      <input placeholder="Password" type="password" formControlName="password" required/>
       <button type="submit" [disabled]="!formOne.valid">Submit</button>
     </form>
 
@@ -25,10 +25,10 @@
     </div>
 
     <form class="form" [formGroup]="formTwo" (ngSubmit)="saveForm(formTwo.value)">
-      <input placeholder="First Name" formControlName="firstName"/>
-      <input placeholder="Last Name" formControlName="lastName"/>
-      <input placeholder="Phone Number" formControlName="phoneNumber"/>
-      <input placeholder="E-Mail" formControlName="email"/>
+      <input placeholder="First Name" formControlName="firstName" required/>
+      <input placeholder="Last Name" formControlName="lastName" required/>
+      <input placeholder="Phone Number" formControlName="phoneNumber" required/>
+      <input placeholder="E-Mail" formControlName="email" required/>
       <button type="submit" [disabled]="!formTwo.valid">Submit</button>
     </form>
 

@@ -85,7 +85,6 @@ button{
 
 button:hover{
   background:#80b438;
-
 }
 
 button:disabled{
@@ -93,7 +92,7 @@ button:disabled{
 
 }
 
-input.ng-valid.required {
+input.ng-valid[required], input.ng-valid.required {
   border-left: 5px solid #42A948; /* green */
 }
 
