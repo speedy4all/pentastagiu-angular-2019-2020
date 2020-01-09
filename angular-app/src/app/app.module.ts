@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ShellModule } from './shell/shell.module';
 import { HomeModule } from './home/home.module';
-import { SharedComponentsModule } from './shared-components/shared-components.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +14,7 @@ import { SharedComponentsModule } from './shared-components/shared-components.mo
     BrowserModule,
     // AppRoutingModule,
     ShellModule,
-    HomeModule,
-    SharedComponentsModule
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
