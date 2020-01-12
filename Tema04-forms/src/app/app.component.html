@@ -1,0 +1,55 @@
+
+  <div class="module">
+    <div class="topTitle">
+    <h1>{{title}}</h1>
+    </div>
+  </div>
+
+  <div class="module">
+    <div class="moduleTitle">
+      <h3>Form No.1</h3>
+    </div>
+
+    <form class="form" [formGroup]="formOne" (ngSubmit)="saveForm(formOne.value)">
+      <input placeholder="E-Mail" formControlName="email" required/>
+      <input placeholder="Password" type="password" formControlName="password" required/>
+      <button type="submit" [disabled]="!formOne.valid">Submit</button>
+    </form>
+
+  </div>
+
+  <div class="module">
+
+    <div class="moduleTitle">
+      <h3>Form No.2</h3>
+    </div>
+
+    <form class="form" [formGroup]="formTwo" (ngSubmit)="saveForm(formTwo.value)">
+      <input placeholder="First Name" formControlName="firstName" required/>
+      <input placeholder="Last Name" formControlName="lastName" required/>
+      <input placeholder="Phone Number" formControlName="phoneNumber" required/>
+      <input placeholder="E-Mail" formControlName="email" required/>
+      <button type="submit" [disabled]="!formTwo.valid">Submit</button>
+    </form>
+
+  </div>
+
+  <div class="module">
+    <div class="moduleTitle">
+      <h3>Pipe - Add one space every 3 chars</h3>
+    </div>
+    <form class="form" [formGroup]="formThree">
+      <input placeholder="Enter text" formControlName="text"/>
+    </form>
+    <p>Pipe result : {{formThree.get('text').value | spaceThree}}</p>
+  </div>
+
+  <div class="module">
+    <div class="moduleTitle">
+      <h3>Forms Json - for my testing</h3>
+    </div>
+    <p>{{formOne.value | json}}</p>
+    <p>{{formTwo.value | json}}</p>
+  </div>
+
+
