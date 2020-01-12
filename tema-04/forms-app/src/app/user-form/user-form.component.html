@@ -1,0 +1,83 @@
+<div class="container">
+    <h1>{{title}}</h1>
+
+    <div [hidden]="submitted">
+        <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+            <div class="form-group">
+                <label for="lastName">Last Name: </label>
+                <input type="text" class="form-control" id="lastName" 
+                required 
+                [(ngModel)]="model.lastName" name="lastName"
+                #lastName="ngModel" placeholder="Last Name">
+                <div [hidden]="lastName.valid || lastName.pristine" 
+                    class="alert alert-danger">
+                    Last name is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="firstName">First Name: </label>
+                <input type="text" class="form-control" id="firstName" 
+                required 
+                [(ngModel)]="model.firstName" name="firstName"
+                #firstName="ngModel" placeholder="First Name">
+                <div [hidden]="firstName.valid || firstName.pristine" 
+                    class="alert alert-danger">
+                    First name is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone: </label>
+                <input type="tel" class="form-control" id="phone" 
+                required 
+                [(ngModel)]="model.phone" name="phone" pattern="[0-9]{4}-[0-9]{6}" 
+                #phone="ngModel" placeholder="0777-123456">
+                <div [hidden]="phone.valid || phone.pristine" 
+                    class="alert alert-danger">
+                    Phone number is required, please use the 0777-123456 format
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="email" class="form-control" id="email" 
+                required 
+                [(ngModel)]="model.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                #email="ngModel" placeholder="Email">
+                <div [hidden]="email.valid || email.pristine" 
+                    class="alert alert-danger">
+                    A valid email address is required
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success" [disabled]="!userForm.valid" (click)="newPersonalData()">Submit</button>
+
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <div class="row">
+            <div class="col-12">You submitted the following information:</div>
+        </div>
+        <div class="row">
+            <div class="col-3">Last Name: </div>
+            <div class="col-9">{{ model.lastName }}</div>
+        </div>
+        <div class="row">
+            <div class="col-3">First Name: </div>
+            <div class="col-9">{{ model.firstName }}</div>
+        </div>
+        <div class="row">
+            <div class="col-3">Phone: </div>
+            <div class="col-9">{{ model.phone }}</div>
+        </div>
+        <div class="row">
+            <div class="col-3">Email: </div>
+            <div class="col-9">{{ model.email }}</div>
+        </div>
+        <br>
+        <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+    </div>
+
+</div>

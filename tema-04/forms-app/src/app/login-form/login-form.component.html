@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>{{title}}</h1>
+
+    <div [hidden]="submitted">
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input type="email" class="form-control" id="email" 
+                required 
+                [(ngModel)]="model.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                #email="ngModel" placeholder="Email">
+                <div [hidden]="email.valid || email.pristine" 
+                    class="alert alert-danger">
+                    A valid email address is required
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password: </label>
+                <input type="password" class="form-control" id="password" 
+                required 
+                [(ngModel)]="model.password" name="password"
+                #password="ngModel" placeholder="Password">
+                <div [hidden]="password.valid || password.pristine" 
+                    class="alert alert-danger">
+                    Password is required
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid" (click)="newCredentials()">Login</button>
+
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <div class="row">
+            <div class="col-12">You logged in with the following information:</div>
+        </div>
+        <div class="row">
+            <div class="col-3">Email: </div>
+            <div class="col-9">{{ model.email }}</div>
+        </div>
+        <div class="row">
+            <div class="col-3">Password: </div>
+            <div class="col-9">{{ model.password }}</div>
+        </div>
+        <br>
+        <button class="btn btn-primary" (click)="submitted=false; loginForm.reset()">Logout</button>
+    </div>
+
+</div>

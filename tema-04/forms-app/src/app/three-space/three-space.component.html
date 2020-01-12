@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <div>
+        <form>
+            <div class="form-group">
+                <label>Your string:</label>
+                <input type="text" class="form-control" [formControl]="str">
+            </div>
+        </form>
+    </div>
+    <div>
+        <p>New string: {{str.value | threeSpace}}</p>
+    </div>
+</div>
