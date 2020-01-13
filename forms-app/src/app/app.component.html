@@ -1,0 +1,18 @@
+<div>
+  {{title}}
+
+  <input [(ngModel)]="title" />
+  <h1>First form</h1>
+  <form #testForm1="ngForm" (ngSubmit)="saveName(testForm1.value)">
+    <input name="name" ngModel />
+    <input name="title" ngModel />
+    <button type="submit">Save</button>
+  </form>
+
+  <h1>Second form</h1>
+  <form [formGroup]='testForm2' (ngSubmit)="saveName(testForm2.value)">
+    <input formControlName='name'>
+    <input formControlName='title' required>
+    <button type="submit">Save</button>
+  </form>
+</div>
