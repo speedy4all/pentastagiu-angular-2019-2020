@@ -1,18 +1,25 @@
 <div>
-  {{title}}
+  <h1>
+    {{title}}
+  </h1>
 
-  <input [(ngModel)]="title" />
-  <h1>First form</h1>
-  <form #testForm1="ngForm" (ngSubmit)="saveName(testForm1.value)">
-    <input name="name" ngModel />
-    <input name="title" ngModel />
-    <button type="submit">Save</button>
+  <h2>First form</h2>
+  <form [formGroup]='firstForm' (ngSubmit)="saveName(firstForm.value)">
+    <input placeholder='e-mail' formControlName='email'>
+    <input placeholder='password' type='password' formControlName='password'>
+    <button type="submit" [disabled]="!firstForm.valid">Save</button>
   </form>
 
-  <h1>Second form</h1>
-  <form [formGroup]='testForm2' (ngSubmit)="saveName(testForm2.value)">
-    <input formControlName='name'>
-    <input formControlName='title' required>
-    <button type="submit">Save</button>
+  <h2>Second form</h2>
+  <form [formGroup]='secondForm' (ngSubmit)="saveName(secondForm.value)">
+    <input placeholder='First Name' formControlName='firstName'>
+    <input placeholder='Last Name' formControlName='lastName'>
+    <input placeholder='Phone number' formControlName='phoneNumber'>
+    <input placeholder='E-mail' formControlName='email'>
+    <button type="submit" [disabled]="!secondForm.valid">Save</button>
   </form>
+
+  <h2>Add spaces to string</h2>
+  <input [(ngModel)]='string' />
+  <p>{{string | insertSpace}}</p>
 </div>
