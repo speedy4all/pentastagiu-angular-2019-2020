@@ -1,0 +1,37 @@
+<div>
+  {{title}}
+  <h1>Pipe</h1>
+  {{text}}
+  <h3>Pipe result</h3>
+  {{text | string}}
+  <h1>First form</h1>
+
+  <!--<form #testForm="ngForm" (ngSubmit)="saveName(testForm.value)">
+    <input name="Email" ngModel />
+    <input name="Password" ngModel />
+    <button type="submit">Save</button>
+  </form> -->
+
+  <form [formGroup]="testForm1" (ngSubmit)="saveName(testForm1.value)">
+    <h2>First Name</h2>
+    <input formControlName="FirstName" />
+    <h2>Last Name</h2>
+    <input formControlName="LastName" />
+    <h2>Phone</h2>
+    <input formControlName="Phone" />
+    <h2>Email</h2>
+    <input formControlName="Email" />
+    <button type="submit">Save</button>
+  </form>
+
+  <h1>Second form</h1>
+
+  <form [formGroup]="testForm" (ngSubmit)="saveName(testForm.value)">
+    <h2>Email</h2>
+    <input formControlName="Email"/>
+    <h2>Password</h2>
+    <input formControlName="Password"/>
+    <button type="submit">Login</button>
+  </form>
+
+</div>
