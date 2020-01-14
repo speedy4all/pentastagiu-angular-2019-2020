@@ -1,0 +1,14 @@
+.header-container{
+  display: flex;
+  align-items: center;
+  align-self: center;
+  padding-left: 25px;
+  background-color: #2e7c31;
+  height: 100px;
+
+  font-weight: 600;
+  font-size: 30px;
+  color: white;
+
+  box-shadow: 2px 2px 3px #999;
+}
