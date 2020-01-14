@@ -1,0 +1,60 @@
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="testForm" (ngSubmit)="saveName(testForm.value)">
+        <div id="user-data">
+          <div class="form-group">
+            <label for="email">Mail</label>
+            <input type="email" name="email" class="form-control" ngModel>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" ngModel>
+          </div>
+          <button class="btn btn-primary" type="submit">Login</button>
+       </div>   
+      </form>
+    </div>
+  </div>
+</div>
+
+<br>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="testForm1" (ngSubmit)="saveName(testForm1.value)">
+        <div id="user-data1">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="phone">Enter your phone number:</label>
+            <input type="tel" id="phone" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="email">Mail</label>
+            <input type="email" id="email1" class="form-control">
+          </div>
+          
+          <button class="btn btn-primary" type="submit">Submit</button>
+       </div>   
+      </form>
+      <div>
+  <h2>Add spaces to string</h2>
+  <input [(ngModel)]='string' />
+  <p>{{string | string}}</p>
+</div>
+    </div>
+  </div>
+</div>
+
