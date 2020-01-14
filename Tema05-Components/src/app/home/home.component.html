@@ -11,5 +11,5 @@
 <app-todo-item>TODO ITEM HERE</app-todo-item>
 <app-todo-item>TODO ITEM HERE</app-todo-item>
 <app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-add></app-todo-add>
+<app-todo-item>{{text}}</app-todo-item>
+<app-todo-add (addEvent)="addTask()"></app-todo-add>
