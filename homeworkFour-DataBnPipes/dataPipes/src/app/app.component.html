@@ -1,0 +1,39 @@
+<div class="forms">
+  <div class="form1">
+    <h5>Form 1</h5>
+    <form [formGroup]="formular1" (ngSubmit)="onSubmit(formular1.value)">
+      <input type="text" name="emailid" placeholder="emailid" formControlName="emailid">
+      <br />
+      <input type="password" name="passwd" placeholder="passwd" formControlName="passwd">
+      <br />
+      <input type="submit" [disabled]="!formular1.valid" value="Log In">
+    </form>
+  </div>
+</div>
+
+<div class="forms">
+  <div class="form2">
+    <h5>Form 2</h5>
+    <form #formular2="ngForm" (ngSubmit)="onClickSubmit(formular2.value)">
+      <input type="text" name="nume" placeholder="Nume" ngModel>
+      <br />
+      <input type="text" name="prenume" placeholder="Prenume" ngModel>
+      <br />
+      <input type="email" name="email" placeholder="Email" ngModel>
+      <br />
+      <input type="tel" name="telefon" placeholder="Numar de telefon" ngModel>
+      <br />
+      <input type="submit" value="submit">
+    </form>
+  </div>
+</div>
+
+
+
+<div class="forms">
+  <div class="form3">
+    <h5>Pipe usage</h5>
+    {{title | space3}}
+    <input [(ngModel)]="title" />
+  </div>
+</div>

@@ -1,0 +1,11 @@
+.forms {
+    border: .2em solid burlywood;
+    display: flex;
+    flex-direction: row;
+    max-width: fit-content;
+    font-size: x-large;
+    margin: .5em;
+}
+.form3 h5 {
+    margin-bottom: 1em;
+}
