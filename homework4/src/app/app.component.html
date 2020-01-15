@@ -1,0 +1,35 @@
+<h1> {{ title | addSpaces }} </h1>
+<h2>Log In Form</h2>
+<form [formGroup]="logInForm">
+  <label>
+    E-mail:
+    <input type="text" formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+  </label>
+  <label>
+    Password:
+    <input type="text" formControlName="password" required>
+  </label>
+  <button type="submit" [disabled]="!logInForm.valid">Submit</button>
+</form>
+<h2>Register Form</h2>
+<form [formGroup]="registerForm">
+  <label>
+    First Name:
+    <input type="text" formControlName="firstName" required>
+  </label>
+  <label>
+    Last Name:
+    <input type="text" formControlName="lastName" required>
+  </label>
+  <label>
+    Phone Number:
+    <input type="tel" formControlName="phoneNumber" pattern="^\+?\d+$" required>
+  </label>
+  <label>
+    E-mail:
+    <input type="text" formControlName="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+  </label>
+  <button type="submit" [disabled]="!registerForm.valid">Submit</button>
+</form>
+<h2>Custom Pipe</h2>
+<input type="text" [(ngModel)]="test"/> <span> {{ test | addSpaces }}</span>
