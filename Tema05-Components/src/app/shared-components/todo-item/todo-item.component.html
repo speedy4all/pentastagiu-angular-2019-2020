@@ -4,8 +4,8 @@
   </div>
 
   <div class="button-container">
-    <button class="button done" type="button">Done</button>
-    <button class="button delete" type="button">Delete</button>
+    <button class="button done" type="button" [disabled]="!active" (click)="doneTask(true);" >Done</button>
+    <button class="button delete" type="button" (click)="deleteTask(true)">Delete</button>
   </div>
 </div>
 

@@ -20,10 +20,8 @@
 }
 
 .button-container{
-
   margin-left:auto;
   margin-right:0px;
-
 }
 
 .button-container .button{
@@ -44,4 +42,8 @@
 
 .button-container .button.delete{
   background-color: #c62828;
+}
+
+.button-container .button:disabled{
+  background-color: gray;
 }
