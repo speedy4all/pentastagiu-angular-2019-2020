@@ -1,0 +1,29 @@
+<h2>Template Driven Forms</h2>
+<form (ngSubmit)="onSubmit()" #heroForm="ngForm" class="center-items">
+  <label for="email">Email</label>
+  <input type="email" id="email"
+         required
+         email
+         [(ngModel)]="user.email" name="email"
+         #email="ngModel">
+  <span
+    *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
+    Email is required.
+  </span>
+  <span
+    *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email">
+    Insert a valid email.
+  </span>
+  <br/>
+  <label for="password">Password</label>
+  <input type="password" id="password"
+         required
+         [(ngModel)]="user.password" name="password"
+         #password="ngModel">
+  <div [hidden]="password.valid || password.pristine"
+       class="alert alert-danger">
+    Password is required
+  </div>
+  <button type="submit" [disabled]="!heroForm.valid">Save</button>
+  <div *ngIf="submitted && heroForm.valid">Saved successfully</div>
+</form>

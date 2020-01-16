@@ -1,0 +1,20 @@
+.ng-invalid:not(form) {
+  border: 2px solid red;
+}
+
+.ng-valid:not(form),
+.ng-valid.required:not(form) {
+  border: 2px solid lightgreen;
+}
+
+.center-items {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: inherit;
+  width: fit-content;
+}
+
+*:focus {
+  outline: none;
+}
+

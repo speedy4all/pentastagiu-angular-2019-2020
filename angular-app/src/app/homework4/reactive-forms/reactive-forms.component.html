@@ -1,0 +1,22 @@
+<h2>Reactive Forms</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="center-items">
+  <label for="email">Email</label>
+  <input formControlName="email" id="email">
+  <span
+    *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.required">
+    Email is required.
+  </span>
+  <span
+    *ngIf="(email.dirty || email.touched) && email.invalid && email.errors.email">
+    Insert a valid email.
+  </span>
+  <br/>
+  <label for="password">Password</label>
+  <input formControlName="password" type="password" id="password">
+  <span
+    *ngIf="(password.dirty || email.touched) && password.invalid && password.errors.required">
+    Password is required
+  </span>
+  <button type="submit" [disabled]="!form.valid">Save</button>
+  <div *ngIf="submitted && form.valid">Saved successfully</div>
+</form>
