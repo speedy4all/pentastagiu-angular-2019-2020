@@ -1,5 +1,7 @@
 <div class="todo-item-container">
     <div class="content-wrapper">
-        <ng-content></ng-content>
+        <ul>
+            <li> {{ todo.name }} <span class="close" (click)="removeTask()">x</span></li> 
+        </ul>
     </div>
 </div>

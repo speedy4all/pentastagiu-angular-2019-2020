@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core'
 
 @Component({
   selector: 'app-todo-add',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoAddComponent implements OnInit {
 
-  constructor() { }
+    @Output() newTodo = new EventEmitter<Object>();
 
-  ngOnInit() {
+    constructor() {}
+
+    ngOnInit() {
+    }
+
+  public addNewTodo(): void {
+    const newTask = {
+      name: 'New Task',
+      completed: false
+    };
+    this.newTodo.emit(newTask);
   }
 
 }
