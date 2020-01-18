@@ -1,0 +1,26 @@
+<div>
+<p>first form</p>
+  <form [formGroup]="testForm" (ngSubmit)="saveName(testForm.value)">
+    
+    <input formControlName="email" placeholder="Email"/>
+    <input formControlName="password" placeholder="password"/>
+    
+    <button type="submit" [disabled]="!testForm.valid">Sign Up</button>
+
+  </form>
+
+<span>{{testForm.value | json}}</span>
+
+<p>second form</p>
+<form [formGroup]='testForm2' (ngSubmit)="saveName(testForm2.value)">
+  <input formControlName='firstName' placeholder='first Name'>
+  <input formControlName='lastName' placeholder='last name'>
+  <input formControlName='phoneNumber' placeholder='phone number'>
+  <input  formControlName='email' placeholder='e-mail'>
+  <button type="submit" [disabled]="!testForm2.valid">Save</button>
+</form>
+
+</div>
+<p>Use Split Pipe with input title</p>
+{{title | splitString}}
+<input [(ngModel)]="title"/>
