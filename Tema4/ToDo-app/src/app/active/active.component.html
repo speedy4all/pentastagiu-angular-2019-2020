@@ -7,8 +7,7 @@
 </div>
 <br>
 <ul class="list-group" *ngFor="let list of activeList; let i = index ">
-    <li class="list-group-item"
-    (click)="onEdit(i)">{{list}}
+    <li class="list-group-item">{{list}}
         <div class="action">
             <span><i class="fa fa-check-circle px-2" aria-hidden="true" (click)="onCheckOff(i)"></i></span>
             <span><i class="fa fa-trash px-2" aria-hidden="true" (click)="onDelete(i)"></i></span>
