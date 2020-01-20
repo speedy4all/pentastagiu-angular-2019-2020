@@ -1,0 +1,22 @@
+.todo-item-container {
+    background-color: #fff;
+    border-left: 4px solid #0000FF;
+    padding: 1rem;
+    margin: 0.5rem 1rem;
+    color: #666;
+}
+
+.todo-item-container:hover {
+    cursor: pointer;
+    background-color: #eee;
+}
+
+.todo-item-container .btn {
+    float: right;
+    width: 54px;
+    margin: 0.1rem;
+    padding: 0 0.3rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    letter-spacing: -0.05rem;
+}
