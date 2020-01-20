@@ -13,7 +13,8 @@
 
 .todo-item-container .btn {
     float: right;
-    margin: 0 0.1rem;
+    width: 54px;
+    margin: 0.1rem;
     padding: 0 0.3rem;
     cursor: pointer;
     font-size: 0.9rem;
