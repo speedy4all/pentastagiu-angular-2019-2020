@@ -1,0 +1,15 @@
+<div *ngIf="completedList.length > 0">
+<h5 (click)="toggler()">
+    <i class = "{{icon}}" aria-hidden ="true"></i>
+    Completed Tasks ({{completedList.length}})</h5>
+  <div *ngIf = "toggle">
+    <ul class="list-group" *ngFor="let list of completedList; let i = index ">
+        <li class="list-group-item">{{list}}
+            <div class="action">
+                <span><i class="fa fa-plus px-2" aria-hidden="true" (click)="onAdd(i)"></i></span>
+                <span><i class="fa fa-trash px-2" aria-hidden="true" (click)="onDelete(i)"></i></span>
+            </div>
+        </li>
+    </ul>
+  </div>
+</div>

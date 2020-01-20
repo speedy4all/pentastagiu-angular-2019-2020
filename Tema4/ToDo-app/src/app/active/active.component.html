@@ -1,0 +1,17 @@
+<div class = "input-group mb-3">
+    
+    <div class="input-group-append"> 
+        <input type="text" #itemName class= "form-control" placeholder ="Add Item" aria-label ="Recipient's username "/>
+       <button class="btn btn-primary" type="button" (click)="onAdd(itemName.value)">Add</button>
+    </div>
+</div>
+<br>
+<ul class="list-group" *ngFor="let list of activeList; let i = index ">
+    <li class="list-group-item"
+    (click)="onEdit(i)">{{list}}
+        <div class="action">
+            <span><i class="fa fa-check-circle px-2" aria-hidden="true" (click)="onCheckOff(i)"></i></span>
+            <span><i class="fa fa-trash px-2" aria-hidden="true" (click)="onDelete(i)"></i></span>
+        </div>
+    </li>
+</ul>
