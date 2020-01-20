@@ -31,6 +31,6 @@ export class CompletedComponent implements OnInit {
   
   toggler(){
     this.toggle =! this.toggle;
-    (this.toggle) ? this.icon = 'fa fa-caret-up' : this.icon = 'fa a-caret-down';
+    (this.toggle) ? this.icon = 'fa fa-caret-up' : this.icon = 'fa fa-caret-down';
   }
 }
