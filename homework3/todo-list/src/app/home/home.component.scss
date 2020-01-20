@@ -1,0 +1,28 @@
+:host{
+  position: relative;
+  display: block;
+  height: 100%;
+}
+
+.home-container {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.home-container.list-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.add-button {
+  position: absolute;
+  right: 5%;
+  text-align:right;
+  margin:0 auto;
+}
+
+.list-container {
+  font-weight: bolder;
+  font-size: larger;
+}

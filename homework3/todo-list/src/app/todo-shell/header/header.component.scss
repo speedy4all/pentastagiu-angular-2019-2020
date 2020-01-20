@@ -1,0 +1,22 @@
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background-color: #C65F56 ;
+  display: block;
+}
+
+
+.header-container {
+  height: 100%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  color: white;
+  font-size: larger;
+  padding: 0 15 px;
+}

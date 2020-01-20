@@ -1,0 +1,49 @@
+.todo-item-container:hover {
+  cursor: pointer;
+  background-color: #e0d7d6;
+}
+
+.todo-item-container:hover .action-button {
+  display: block;
+}
+
+.action-container .button {
+  margin-right: 5px;
+  padding: 5px;
+  border-radius: 8px;
+  outline: none;
+  color: white;
+  background-color: transparent;
+}
+
+.action-container .button:hover {
+  cursor: pointer;
+}
+
+.action-container .button.done {
+  background-color: forestgreen;
+}
+
+.action-container .button.done:hover {
+  background-color: darkgreen;
+}
+
+.action-container .button.delete {
+  background-color: darkred;
+}
+
+.action-container .button.delete:hover {
+  background-color: #530000;
+}
+
+.todo-item-container {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid lightgrey;
+}
+
+.action-container {
+  margin-left: 200px;
+}
+
+
