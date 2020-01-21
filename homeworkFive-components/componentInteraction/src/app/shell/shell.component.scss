@@ -1,0 +1,13 @@
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+div.shell-container {
+    height: calc(100% - 100px);
+    padding: 100px 0 0 0;
+    display: flex;
+}

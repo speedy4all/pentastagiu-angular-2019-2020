@@ -1,0 +1,21 @@
+.todo-item-container {
+    border: .2em solid purple;
+    margin: 1px;
+    padding: 6px;
+}
+
+.action-container{
+    display: flex;
+    padding: 1px;
+    margin: 3px;
+    flex-flow: row-reverse;
+    position: relative;
+}
+
+.button-done {
+    margin: 0 1em;
+    background-color: rgba(46, 139, 86, 0.37);
+}
+.button-delete {
+    background-color: rgba(255, 0, 0, 0.342);
+}

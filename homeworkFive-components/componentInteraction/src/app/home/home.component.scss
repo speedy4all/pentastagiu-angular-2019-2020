@@ -1,0 +1,25 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+div.home-container {
+    height: 100vh;
+    overflow: auto;
+    width: 100vw;
+}
+
+div.home-container div.list-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    width: 50%;
+    margin: 1em 25%;
+}
+
+div.home-container .add-button {
+    position: absolute;
+    right: 5%;
+    top: 20%;
+}
