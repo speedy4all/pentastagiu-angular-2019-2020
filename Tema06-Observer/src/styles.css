@@ -18,6 +18,18 @@ h1{
   font-size: 25px;
 }
 
+table{
+  display: table;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td{
+  padding: 3px;
+  background-color: #aed581;
+}
+
 p{
   padding: 20px;
 }
@@ -37,8 +49,9 @@ p{
 
 .module{
   position:relative;
+  align-items: center;
   top:15%;
-  width:450px;
+  width:500px;
   margin-left:auto;
   margin-right:auto;
   border-radius:5px;

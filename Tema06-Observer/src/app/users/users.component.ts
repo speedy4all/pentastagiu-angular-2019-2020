@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
-
-import { HttpjsonService } from './../httpjson.service';
-
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -12,18 +9,15 @@ import { HttpjsonService } from './../httpjson.service';
 })
 export class UsersComponent implements OnInit {
 
-  public users = [];
+  public usersResponse: Observable<any>;
 
-  constructor(private userService: HttpjsonService) {
+  constructor(private httpClient: HttpClient) {
 
    }
 
+   //it works with the online link as well
   ngOnInit() {
-    this.userService.getUsersData().subscribe(data => {
-      this.users = data;
-      console.log(this.users);
-    });
-
+      this.usersResponse = this.httpClient.get('/assets/data/users.json');
   }
 
 }
