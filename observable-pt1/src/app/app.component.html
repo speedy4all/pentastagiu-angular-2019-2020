@@ -1,0 +1,39 @@
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">City</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Website</th>
+      <th scope="col">Company</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of users | async">
+      <th scope="row">{{item.id}}</th>
+      <td> {{ item.name }}</td>
+      <td> {{ item.username }}</td>
+      <td>{{ item.email }}</td>
+      <td>{{ item.address.city }}</td>
+      <td>{{ item.phone }}</td>
+      <td>{{ item.website }}</td>
+      <td>{{ item.company.name }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+<hr>
+<br>
+
+<h1>Counter</h1>
+<div class="btn-group btn-group-lg">
+  <button class="btn btn-success" (click)="increase()">Increase</button>
+  <button class="btn btn-danger" (click)="decrease()">Decrease</button>
+  <button class="btn btn-primary" (click)="resetCount()">Reset</button>
+</div>
+<h4>Number: {{ counter }}</h4>
+
