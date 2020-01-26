@@ -1,0 +1,49 @@
+<h1>Authentication Form</h1>
+<div>
+  <h2>Template driven form</h2>
+  <form #form1="ngForm" (ngSubmit)="saveForm(form1)">
+    <input email required placeholder="Email" name="email" ngModel>
+    <input required minlength="1" type="password" placeholder="Password" name="password" ngModel>
+    <button type="submit">Save</button>
+    <div *ngIf="form1.invalid">Please enter valid data</div>
+  </form>
+</div>
+<div>
+  <h2>Rective form</h2>
+  <form [formGroup]="reactiveForm1" (ngSubmit)="saveForm(reactiveForm1)">
+    <input placeholder="Email" formControlName="email">
+    <input type="password" placeholder="Password" formControlName="password">
+    <button type="submit">Save</button>
+    <div *ngIf="reactiveForm1.invalid">Please enter valid data</div>
+  </form>
+</div>
+
+<h1>Personal Data Form</h1>
+<div>
+  <h2>Template driven form</h2>
+  <form #form2="ngForm" (ngSubmit)="saveForm(form2)">
+    <input required placeholder="First Name" name="firstName" ngModel>
+    <input required placeholder="Last Name" name="lastName" ngModel>
+    <input required type="number" placeholder="Phone Number" name="phoneNumber" ngModel>
+    <input email required placeholder="Email" name="email" ngModel>
+    <button type="submit">Save</button>
+    <div *ngIf="form2.invalid">Please enter valid data</div>
+  </form>
+</div>
+<div>
+  <h2>Rective form</h2>
+  <form [formGroup]="reactiveForm2" (ngSubmit)="saveForm(reactiveForm2)">
+    <input placeholder="First Name" formControlName="firstName">
+    <input placeholder="Last Name" formControlName="lastName">
+    <input placeholder="Phone Number" formControlName="phoneNumber">
+    <input placeholder="Email" formControlName="email">
+    <button type="submit">Save</button>
+    <div *ngIf="reactiveForm2.invalid">Please enter valid data</div>
+  </form>
+</div>
+
+<h1>Custom Pipe</h1>
+<input type="text" [(ngModel)]="stringForPipe">
+<div>
+  {{stringForPipe | splitString}}
+</div>
