@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {UsersDataService} from './users-data.service';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -18,7 +19,7 @@ import { UsersListComponent } from './users-list/users-list.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UsersDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
