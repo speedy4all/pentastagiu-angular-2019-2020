@@ -1,15 +1,11 @@
 <app-header>
-  TODO APP
+  {{title}}
 </app-header>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-item>TODO ITEM HERE</app-todo-item>
-<app-todo-add></app-todo-add>
+
+<ul>
+  <li *ngFor="let task of taskItem; let i = index" >
+    <app-todo-item (deleteEvent)="deleteTask(i)" (doneEvent)="doneTask(i)" [task]="task">{{task}}</app-todo-item>
+  </li>
+</ul>
+
+<app-todo-add (addEvent)="addTask()"></app-todo-add>
