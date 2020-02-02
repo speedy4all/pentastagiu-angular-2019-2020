@@ -1,0 +1,17 @@
+<div class="module">
+  <div class="moduleTitle">
+    <h3>Users</h3>
+  </div>
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+    <tr *ngFor="let user of usersResponse | async">
+      <td>{{user.id}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+  </table>
+</div>
