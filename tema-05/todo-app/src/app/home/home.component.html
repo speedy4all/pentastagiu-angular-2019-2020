@@ -1,27 +1,10 @@
 <div class="home-container">
     <div class="list-container">
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
-        <app-todo-item>To Do Item</app-todo-item>
+        <ul class="list-unstyled">
+            <li *ngFor="let todo of todoArray; let i = index"> 
+                <app-todo-item  (delEvent)="delTodo(i)" [todo]="todo">{{todo}}</app-todo-item>
+            </li>
+        </ul>
     </div>
     <app-todo-add class="add-button"></app-todo-add>
 </div>
