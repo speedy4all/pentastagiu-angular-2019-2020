@@ -1,0 +1,15 @@
+<div>
+<h2>Users</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Username</th>
+    <th>Email</th>
+  </tr>
+  <tr *ngFor="let user of usersResponse | async">
+    <td>{{user.name}}</td>
+    <td>{{user.username}}</td>
+    <td>{{user.email}}</td>
+  </tr>
+</table>
+</div>
