@@ -1,0 +1,23 @@
+<div class="form-container">
+  <h3>{{title}}</h3>
+
+  <form #simpleForm="ngForm" (ngSubmit)="saveForm(simpleForm.value)">
+
+    <label for="name">Nume</label>
+    <input type="text" name="name"  id="name" ngModel/>
+
+    <label for="surname">Prenume</label>
+    <input type="text" name="surname" id="surname" ngModel/>
+
+    <label for="phone">Telefon</label>
+    <input type="tel" name="phone" id="phone" ngModel/>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" ngModel/>
+
+    <button type="submit" class="save-button" (click)="saveForm(form)">Salveaza</button>
+
+  </form>
+
+</div>
+

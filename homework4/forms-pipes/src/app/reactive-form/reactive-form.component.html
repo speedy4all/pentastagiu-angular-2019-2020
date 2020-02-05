@@ -1,0 +1,16 @@
+<div class="form-container">
+  <h3>{{title}}</h3>
+
+  <form [formGroup]="reactiveForm" (ngSubmit)="saveForm(reactiveForm.value)">
+
+    <label for="email">Email</label>
+    <input type="email" id="email" formControlName="email"/>
+
+    <label for="password">Parola</label>
+    <input type="password" id="password" formControlName="password"/>
+
+    <button type="submit" class="save-button" (click)="saveForm(form)">Salveaza</button>
+
+  </form>
+
+</div>
