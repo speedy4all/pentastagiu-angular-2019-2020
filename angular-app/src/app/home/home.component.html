@@ -1,6 +1,6 @@
 <div class="home-container">
   <div class="list-container">
-    <app-todo-item><p>todo item works</p></app-todo-item>
+    <app-todo-item [toDoTitle]="parentTitle" (changed)="childChanged()"><p>{{parentTitle}}</p></app-todo-item>
     <app-todo-item><p>todo item works</p></app-todo-item>
     <app-todo-item><p>todo item works</p></app-todo-item>
     <app-todo-item><p>todo item works</p></app-todo-item>

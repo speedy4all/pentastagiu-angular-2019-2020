@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  parentTitle: string;
+
+  constructor() {
+    this.parentTitle = 'to do item title';
+  }
+
+  childChanged() {
+    this.parentTitle = 'item resolved';
+  }
 
   ngOnInit() {
   }
