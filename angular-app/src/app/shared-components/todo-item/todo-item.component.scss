@@ -1,0 +1,40 @@
+.todo-item-container {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1);
+
+    .action-container {
+      visibility: visible;
+    }
+  }
+}
+
+.action-container {
+  visibility: hidden;
+
+  .button {
+    margin-right: 5px;
+    padding: 5px;
+    border-radius: 6px;
+    color: white;
+    background-color: transparent;
+    outline: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.done {
+      background-color: lightgreen;
+    }
+
+    &.delete {
+      background-color: lightcoral;
+    }
+  }
+}
