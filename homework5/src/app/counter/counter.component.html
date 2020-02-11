@@ -1,0 +1,6 @@
+<br>
+<h1>{{countTitle}}</h1>
+<input [(ngModel)]="currentCounter"/>
+<button type="button" (click)="startCount()" *ngIf="!isCounting">Start</button>
+<button type="button" (click)="pauseCount()" *ngIf="isCounting">Pause</button>
+<button type="button" (click)="clearCount()">Clear</button>

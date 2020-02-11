@@ -1,0 +1,28 @@
+<h1>{{title}}</h1>
+
+<div>
+  <table id="details">
+    <tr class="table-header">
+      <th>Id</th>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Address</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th>Company</th>
+      <th>Company Catch Phase</th>
+      <th>Company business organization</th>
+    </tr>
+    <tr *ngFor="let user of users$ | async">
+      <th>{{user.id}}</th>
+      <th>{{user.name}}</th>
+      <th>{{user.username}}</th>
+      <th>{{user.address.street}}, {{user.address.suite}}, {{user.address.city}}, {{user.address.zipcode}}, lat: {{user.address.geo.lat}}, lng: {{user.address.geo.lng}}</th>
+      <th>{{user.phone}}</th>
+      <th>{{user.website}}</th>
+      <th>{{user.company.name}}</th>
+      <th>{{user.company.catchPhrase}}</th>
+      <th>{{user.company.bs}}</th>
+    </tr>
+  </table>
+</div>
