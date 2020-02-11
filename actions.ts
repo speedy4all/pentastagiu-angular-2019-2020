@@ -1,19 +1,4 @@
-interface IToDo {
-    name: string,
-    date: Date,
-    finished: boolean,
-}
-
-class Action implements IToDo {
-    constructor(public name: string, public date: Date, public finished: boolean) {
-    }
-
-    private finish() {
-        this.finished = true;
-    }
-}
-
-class ActionsList {
+class Actions {
     public toDos = [];
 
     public addToDo(action: object) {
@@ -53,28 +38,13 @@ class ActionsList {
         }
     }
 
-    public modifyToDo(action, name) {
+    public modifyToDo(action, property, newValue) {
         for (var i = 0; i < this.toDos.length; i++) {
             if (this.toDos[i].name === action.name) {
-                this.toDos[i].name = name;
+                action.modifyAction(property, newValue);
             }
         }
     }
 }
 
-const firstAction = new Action('Go to work', new Date('09.12.2019'), true);
-const secondAction = new Action('Go shopping', new Date('09.12.2019'), false);
-const thirdAction = new Action('Play with your child', new Date('09.12.2019'), false);
-const fourthAction = new Action('Watch a movie', new Date('09.12.2019'), false);
-
-const list = new ActionsList();
-list.addToDo(firstAction);
-list.addToDo(secondAction);
-list.addToDo(thirdAction);
-list.addToDo(fourthAction);
-list.listAll();
-list.finishTask(thirdAction);
-list.modifyToDo(fourthAction, 'Eat dinner');
-list.listNotFinished();
-list.removeToDo(fourthAction);
-list.listAll();
+export { Actions };
