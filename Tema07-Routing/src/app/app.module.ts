@@ -1,3 +1,4 @@
+import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,6 +9,9 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 
 import { UsersComponent } from './users/users.component';
+import {UserDetailsModule} from './user-details/user-details.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +23,8 @@ import { UsersComponent } from './users/users.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    UserDetailsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

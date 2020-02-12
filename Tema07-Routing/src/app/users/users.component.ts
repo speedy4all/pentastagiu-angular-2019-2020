@@ -25,7 +25,12 @@ export class UsersComponent implements OnInit {
   ngOnInit() {
       this.usersService.getUsers().subscribe( data => {
         this.users = data;
+        console.log(this.users);
       });
+  }
+
+  selectUser(id: number){
+    this.usersService.setSelectedUser(id);
   }
 
 }

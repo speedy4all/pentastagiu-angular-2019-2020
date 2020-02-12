@@ -12,10 +12,24 @@ const url = 'https://jsonplaceholder.typicode.com/users';
 })
 export class UsersService {
 
-  constructor(private http: HttpClient){ }
+  selectedUserId: number = 1;
 
-  public getUsers() : Observable<User[]>{
+  constructor(private http: HttpClient) { }
 
+  public getUsers(): Observable<any> {
     return this.http.get(url);
+  }
+
+  public getUserDetails(id: number): Observable<any>{
+    return this.http.get(url+"/"+id);
+  }
+
+  setSelectedUser(id: number){
+    this.selectedUserId = id;
+    console.log(id);
+  }
+
+  getSelectedUser(){
+    return this.selectedUserId;
   }
 }

@@ -2,13 +2,10 @@
   <mat-card-title>Users</mat-card-title>
   <mat-card-content>
     <mat-list *ngFor="let user of users">
-    <mat-list-item><a [routerLink]="[user.id]">{{user.name}}</a></mat-list-item>
+      <a [routerLink]="['/user',user.id]"><mat-list-item (click)="selectUser(user.id)" >{{user.name}}</mat-list-item></a>
       <mat-divider></mat-divider>
     </mat-list>
-
   </mat-card-content>
-
-
 </mat-card>
 
 

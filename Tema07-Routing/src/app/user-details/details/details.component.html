@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-title>User details</mat-card-title>
+  <mat-card-content>
+  <p>Name: {{user.name}}</p>
+  <p>Username: {{user.username}}</p>
+  <p>Email: {{user.email}}</p>
+  <p>Phone: {{user.phone}}</p>
+  </mat-card-content>
+</mat-card>
+<br/>
+<mat-card>
+  <mat-card-title>Albums</mat-card-title>
+  <mat-card-content>
+
+
+  <mat-list *ngFor="let album of albums">
+    <a ><mat-list-item>{{album.title}}</mat-list-item></a>
+    <mat-divider></mat-divider>
+  </mat-list>
+  </mat-card-content>
+</mat-card>
