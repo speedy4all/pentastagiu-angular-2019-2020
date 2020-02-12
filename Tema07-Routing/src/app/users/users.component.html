@@ -1,8 +1,8 @@
 <mat-card>
   <mat-card-title>Users</mat-card-title>
   <mat-card-content>
-    <mat-list *ngFor="let user of usersResponse | async">
-      <a><mat-list-item>{{user.username}}</mat-list-item></a>
+    <mat-list *ngFor="let user of users">
+    <mat-list-item><a [routerLink]="[user.id]">{{user.name}}</a></mat-list-item>
       <mat-divider></mat-divider>
     </mat-list>
 
@@ -12,20 +12,3 @@
 </mat-card>
 
 
-<div class="module">
-  <div class="moduleTitle">
-    <h3>Users</h3>
-  </div>
-  <table>
-    <tr>
-      <th>Id</th>
-      <th>Name</th>
-      <th>Email</th>
-    </tr>
-    <tr *ngFor="let user of usersResponse | async">
-      <td>{{user.id}}</td>
-      <td>{{user.username}}</td>
-      <td>{{user.email}}</td>
-    </tr>
-  </table>
-</div>
