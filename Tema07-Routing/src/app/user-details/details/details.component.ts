@@ -24,7 +24,7 @@ export class DetailsComponent implements OnInit {
 
     this.userService.getUserDetails(this.userService.getSelectedUser()).subscribe( data => {
       this.user = data;
-      console.log(data);
+      console.log(this.user);
     });
 
     this.albumsService.getUserAlbums(this.userService.getSelectedUser()).subscribe( data => {

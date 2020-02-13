@@ -20,8 +20,8 @@ export class UsersService {
     return this.http.get(url);
   }
 
-  public getUserDetails(id: number): Observable<any>{
-    return this.http.get(url+"/"+id);
+  public getUserDetails(id: number): Observable<User>{
+    return this.http.get<User>(url+"/"+id);
   }
 
   setSelectedUser(id: number){
