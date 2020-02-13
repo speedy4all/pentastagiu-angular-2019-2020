@@ -1,10 +1,11 @@
-
 import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
+import { AlbumsService } from './../albums.service';
 import { UsersService } from '../users.service';
-import { User } from '../_models/user';
+import { Album } from '../_models/album.model';
+import { User } from '../_models/user.model';
 
 
 @Component({
@@ -15,7 +16,7 @@ import { User } from '../_models/user';
 export class UsersComponent implements OnInit {
 
 
-  users: User[];
+  users: User[] = [];
 
   constructor(private usersService: UsersService) {
 
@@ -31,6 +32,7 @@ export class UsersComponent implements OnInit {
 
   selectUser(id: number){
     this.usersService.setSelectedUser(id);
+    console.log(id);
   }
 
 }

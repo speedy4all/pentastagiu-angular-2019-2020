@@ -3,7 +3,8 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { User } from './_models/user';
+
+import { User } from './_models/user.model';
 
 const url = 'https://jsonplaceholder.typicode.com/users';
 
@@ -12,24 +13,24 @@ const url = 'https://jsonplaceholder.typicode.com/users';
 })
 export class UsersService {
 
-  selectedUserId: number = 1;
+  selectedUserId = 1;
 
   constructor(private http: HttpClient) { }
 
-  public getUsers(): Observable<any> {
-    return this.http.get(url);
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(url);
   }
 
-  public getUserDetails(id: number): Observable<User>{
-    return this.http.get<User>(url+"/"+id);
+  getUserDetails(id: number): Observable<User> {
+    return this.http.get<User>(url + '/' + id);
   }
 
-  setSelectedUser(id: number){
+  setSelectedUser(id: number) {
     this.selectedUserId = id;
     console.log(id);
   }
 
-  getSelectedUser(){
+  getSelectedUser() {
     return this.selectedUserId;
   }
 }

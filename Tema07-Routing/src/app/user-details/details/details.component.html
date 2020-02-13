@@ -5,6 +5,7 @@
   <p>Username: {{user.username}}</p>
   <p>Email: {{user.email}}</p>
   <p>Phone: {{user.phone}}</p>
+  <p>Company: {{user.company.name}}</p>
   </mat-card-content>
 </mat-card>
 <br/>
@@ -14,7 +15,7 @@
 
 
   <mat-list *ngFor="let album of albums">
-    <a ><mat-list-item>{{album.title}}</mat-list-item></a>
+    <a [routerLink]=""><mat-list-item>{{album.title}}</mat-list-item></a>
     <mat-divider></mat-divider>
   </mat-list>
   </mat-card-content>
