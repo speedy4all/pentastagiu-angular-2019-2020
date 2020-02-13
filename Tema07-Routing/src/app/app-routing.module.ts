@@ -15,6 +15,11 @@ const routes: Routes = [
     path: 'user',
     loadChildren: () => import('./user-details/user-details.module')
       .then( m => m.UserDetailsModule)
+  },
+  {
+    path: 'album',
+    loadChildren: () => import('./album/album.module')
+      .then( m => m.AlbumModule)
   }
 ];
 
