@@ -1,6 +1,6 @@
 <mat-card>
   <mat-card-title>User details</mat-card-title>
-  <mat-card-content>
+  <mat-card-content *ngIf="user">
   <p>Name: {{user.name}}</p>
   <p>Username: {{user.username}}</p>
   <p>Email: {{user.email}}</p>
@@ -13,9 +13,8 @@
   <mat-card-title>Albums</mat-card-title>
   <mat-card-content>
 
-
   <mat-list *ngFor="let album of albums">
-    <a [routerLink]=""><mat-list-item>{{album.title}}</mat-list-item></a>
+    <a [routerLink]="['/album',album.id]"><mat-list-item (click)="setAlbum(album.id)">{{album.title}}</mat-list-item></a>
     <mat-divider></mat-divider>
   </mat-list>
   </mat-card-content>

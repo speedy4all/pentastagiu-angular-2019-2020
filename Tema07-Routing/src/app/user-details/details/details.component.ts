@@ -34,4 +34,7 @@ export class DetailsComponent implements OnInit {
     });
   }
 
+  setAlbum(id: number){
+    this.albumsService.setSelectedAlbum(id);
+  }
 }

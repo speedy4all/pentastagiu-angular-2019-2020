@@ -8,8 +8,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 
-import { UsersComponent } from './users/users.component';
+import { AlbumModule } from './album/album.module';
 import {UserDetailsModule} from './user-details/user-details.module';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {UserDetailsModule} from './user-details/user-details.module';
     AppRoutingModule,
     HttpClientModule,
     MaterialModule,
-    UserDetailsModule
+    UserDetailsModule,
+    AlbumModule
   ],
   providers: [],
   bootstrap: [AppComponent]
