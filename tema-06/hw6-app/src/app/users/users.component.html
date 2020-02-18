@@ -1,1 +1,37 @@
-<p>users works!</p>
+<h1>Users</h1>
+<div class="container">
+  <h2>User table with subscribe</h2>
+  <table class="table-condensed w-100">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users ">
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td class="text-lowercase">{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>User table with async pipe</h2>
+  <table class="table-condensed w-100">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of usersAsync | async">
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+        <td class="text-lowercase">{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
