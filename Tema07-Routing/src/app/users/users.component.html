@@ -1,11 +1,28 @@
-<mat-card>
-  <mat-card-title>Users</mat-card-title>
-  <mat-card-content>
-    <mat-list *ngFor="let user of users">
-      <a [routerLink]="['/user',user.id]"><mat-list-item (click)="selectUser(user.id)">{{user.name}}</mat-list-item></a>
-      <mat-divider></mat-divider>
-    </mat-list>
-  </mat-card-content>
-</mat-card>
+
+<mat-sidenav-container>
+  <mat-sidenav mode="push" [(opened)]="sideNavOpened">
+    <button mat-button (click)="openDialog()">Open Dialog</button>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button mat-button (click)="sideNavOpened=!sideNavOpened"><mat-icon aria-hidden="false" aria-label="Example home icon" >menu</mat-icon></button>
+    <br/><br/>
+    <div *ngFor="let user of users">
+      <mat-card>
+        <mat-card-content>
+          <mat-list >
+            <a [routerLink]="['/user',user.id]"><mat-list-item (click)="selectUser(user.id)">{{user.name}}</mat-list-item></a>
+
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+    <br/>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+
+
 
 

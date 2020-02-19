@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Observable } from 'rxjs';
-
-import { AlbumsService } from './../albums.service';
 import { UsersService } from '../users.service';
-import { Album } from '../_models/album.model';
+
 import { User } from '../_models/user.model';
+import {DialogComponent} from './dialog/dialog.component';
+import {MatDialog} from '@angular/material';
 
 
 @Component({
@@ -15,14 +14,14 @@ import { User } from '../_models/user.model';
 })
 export class UsersComponent implements OnInit {
 
-
+  sideNavOpened = false;
   users: User[] = [];
 
-  constructor(private usersService: UsersService) {
+  constructor(private usersService: UsersService, public dialog: MatDialog) {
 
    }
 
-   //it works with the online link as well
+   // it works with the online link as well
   ngOnInit() {
       this.usersService.getUsers().subscribe( data => {
         this.users = data;
@@ -30,9 +29,19 @@ export class UsersComponent implements OnInit {
       });
   }
 
-  selectUser(id: number){
+  selectUser(id: number) {
     this.usersService.setSelectedUser(id);
     console.log(id);
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      width: '500px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`closed`);
+    });
   }
 
 }
