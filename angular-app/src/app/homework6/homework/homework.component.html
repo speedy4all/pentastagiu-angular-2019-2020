@@ -1,0 +1,8 @@
+<h1>{{counter}}</h1>
+<button type="button" (click)="add()">Add</button>
+<p>async</p>
+<h1>{{counterAsync | async}}</h1>
+<button type="button" (click)="add()">Add</button>
+<div *ngFor="let user of users">
+  {{user | json}}
+</div>
