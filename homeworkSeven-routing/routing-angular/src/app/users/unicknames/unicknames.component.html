@@ -1,0 +1,13 @@
+<div>
+    <h2>Nicknames</h2>
+    <table>
+      <tr>
+        <th>Real name</th> 
+        <th>Nickname</th>
+      </tr>
+      <tr *ngFor="let user of people$ | async">
+        <td>{{user.name}}</td>
+        <td>{{user.username}}</td>
+      </tr>
+    </table>
+    </div>
