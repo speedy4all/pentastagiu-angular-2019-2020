@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.namecard {
+    background: #c2185b;
+}
+
+a.nav {
+    color: #000000;
+    text-decoration: none;
+}
+
+a.nnames {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.nnbut {
+    margin: 10px 10% !important;
+    background: #921c2b;
+}
+.avatar {
+    max-width: 30px;
+    max-height: 20px;
+}

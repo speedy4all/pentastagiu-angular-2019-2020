@@ -1,0 +1,34 @@
+<div>
+  <h1>Users</h1>
+  <table>
+    <tr>
+      <th>
+        <h2>Name</h2>
+      </th>
+      <th>
+        <h2>Email</h2>
+      </th>
+    </tr>
+    <tr *ngFor="let user of people$ | async;let i=index">
+      <td>
+        <mat-card class="namecard">
+          <mat-card-header>
+            <mat-card-title>{{user.name}}</mat-card-title>
+          <img class="avatar" *ngFor="let photo of photos$[i] | async" src="{{photo.url}}">
+          </mat-card-header>
+        </mat-card>
+      </td>
+      <td>
+        <mat-card class="emailcard">
+          <mat-card-title>{{user.email}}</mat-card-title>
+        </mat-card>
+      </td>
+    </tr>
+  </table>
+</div>
+<button class="nnbut" mat-raised-button matTooltip="Click to display users nicknames"
+  aria-label="Button that displays a tooltip when focused or hovered over" matTooltipPosition="right">
+  <h2><a class="nnames" routerLink="unicknames">Nicknames</a></h2>
+</button>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,20 @@
+<div>
+    <table>
+      <tr>
+        <th><h2>Real name</h2></th> 
+        <th><h2>Nickname</h2></th>
+      </tr>
+      <tr *ngFor="let user of people$ | async">
+        <td>
+        <mat-card class="namecard">
+          <mat-card-title>{{user.name}}</mat-card-title>
+        </mat-card>
+        </td>
+        <td>
+          <mat-card class="nickncard">
+            <mat-card-title>{{user.username}}</mat-card-title>
+          </mat-card>
+        </td>
+      </tr>
+    </table>
+    </div>
