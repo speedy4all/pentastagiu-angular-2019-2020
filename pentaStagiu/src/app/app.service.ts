@@ -4,6 +4,7 @@ import { Observable, Subject } from 'rxjs';
 @Injectable()
 export class AppService {
     public messageStream: Observable<string>;
+    // tslint:disable-next-line: variable-name
     private _message: Subject<string> = new Subject<string>();
 
     constructor() {

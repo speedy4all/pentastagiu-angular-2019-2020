@@ -1,0 +1,6 @@
+<h1>About Parent</h1>
+<a routerLink="about1">About1</a>
+<div *ngFor="let user of users">
+    <a [routerLink]="[user.id]">{{user.name}}</a>
+</div>
+<router-outlet></router-outlet>
