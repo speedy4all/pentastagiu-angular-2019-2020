@@ -1,0 +1,7 @@
+<app-child></app-child>
+<div>
+  <input #input type="text" />
+  <button type="button" (click)="sendMessage(input.value)">Send Message</button>
+  <button type="button" (click)="error(input.value)">Send Error</button>
+  <button type="button" (click)="complete()">Done with Messages</button>
+</div>
