@@ -24,3 +24,15 @@ a.nnames {
     max-width: 30px;
     max-height: 20px;
 }
+
+.mat-card-title {
+    font-size: 18px;
+}
+
+.mat-card-header {
+    margin-bottom: 0px;
+}
+
+.mat-card-header .mat-card-title {
+    margin-bottom: 0px !important;
+}
