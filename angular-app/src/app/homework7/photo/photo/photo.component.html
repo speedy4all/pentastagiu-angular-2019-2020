@@ -1,0 +1,6 @@
+<div *ngFor="let photo of photos">
+  <img src="{{photo.thumbnailUrl}}">
+  <app-photo-details [routerLink]="['photo-details', photo.id]" [photo]="photo"></app-photo-details>
+</div>
+<a href="home">Home</a>
+<router-outlet name="photo"></router-outlet>

@@ -1,0 +1,10 @@
+<button type="button" (click)="showUserDetails()">User Details</button>
+<div *ngIf="show">
+  {{user.id}}
+  {{user.name}}
+  {{user.email}}
+  {{user.address | json}}
+  {{user.company | json}}
+  {{user.phone}}
+  {{user.website}}
+</div>

@@ -1,0 +1,6 @@
+<div *ngFor="let user of users">
+  {{user.name}}
+  <app-user-detail [routerLink]="'user-details'" [user]="user"></app-user-detail>
+</div>
+<a href="home">Home</a>
+<router-outlet name="user"></router-outlet>

@@ -1,0 +1,7 @@
+<button type="button" (click)="showMoreDetails()">More details..</button>
+<div *ngIf="show">
+  <img src="{{photo.url}}">
+  {{photo.title}}
+  {{photo.id}}
+  {{photo.albumId}}
+</div>
