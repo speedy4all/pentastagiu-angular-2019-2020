@@ -1,0 +1,19 @@
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="over" opened="true">
+    <mat-nav-list class="content-navList">
+      <a mat-list-item id="nav-list-close-menu" (click)="close()">
+        <i class="material-icons" style="line-height:40px">keyboard_arrow_left</i>Close
+      </a>
+      <a mat-list-item  routerLink="/users" routerLinkActive="active-link" >Users</a>
+      <a mat-list-item  routerLink="/userV2" routerLinkActive="active-link">User v2</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar>
+      <mat-icon id="navbar-menu-icon" (mousedown)="sidenavOpen()" style="font-size:30px;">reorder</mat-icon>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

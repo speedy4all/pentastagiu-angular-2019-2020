@@ -1,0 +1,7 @@
+<div *ngIf="users">
+  <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let user of users">
+      {{user.name}} <button mat-button color="primary" (click)="detailUser(user.id)">Detail user</button>
+    </mat-list-item>
+  </mat-list>
+</div>

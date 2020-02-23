@@ -1,0 +1,14 @@
+
+<div>
+  <mat-dialog-content class="mat-typography">
+  <h3>Photos</h3>
+  <mat-list role="list" *ngFor="let photo of photos">
+    <mat-list-item role="listitem" class="itemPhoto">
+      <img class="image" src="{{photo.url}}" alt="{{photo.title}}"/>{{photo.title}}
+    </mat-list-item>
+  </mat-list>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>close</button>
+  </mat-dialog-actions>
+</div>

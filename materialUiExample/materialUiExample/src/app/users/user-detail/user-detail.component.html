@@ -1,0 +1,14 @@
+<div>
+  <h3>{{user.name}}</h3>
+  <p>Email: {{user.email}}</p>
+  <p>Address:</p>
+  <p>Street: {{user.address.street}}</p>
+  <h4>Albums</h4>
+  <div *ngIf="userDetailAlbum">
+    <mat-list role="list">
+      <mat-list-item role="listitem" *ngFor="let album of userDetailAlbum">
+        {{album.title}} <button mat-button color="primary" (click)="albumDetail(album.id)">Detail album</button>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

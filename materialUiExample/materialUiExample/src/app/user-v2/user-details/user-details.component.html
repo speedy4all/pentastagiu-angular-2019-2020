@@ -1,0 +1,28 @@
+<div>
+  <mat-card class="example-card" *ngIf="userDetail">
+  <mat-card-header>
+    <mat-card-title>{{userDetail.name}}</mat-card-title>
+    <mat-card-subtitle>{{userDetail.username}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <span>
+      Address: {{userDetail.address.street}}
+    </span>
+    <p>City: {{userDetail.address.city}}</p>
+    <p>Phone: {{userDetail.phone}}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button (click)="albumUser(userDetail.id)">Show Albums</button>
+  </mat-card-actions>
+</mat-card>
+  <mat-card class="example-card" *ngIf="albums">
+    <mat-card-content>
+      <mat-list role="list">
+        <mat-list-item role="listitem" *ngFor="let album of albums">
+          {{album.title}}
+          <a routerLink="/userV2/{{album.userId}}/album/photos/{{album.id}}">Detail</a>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
