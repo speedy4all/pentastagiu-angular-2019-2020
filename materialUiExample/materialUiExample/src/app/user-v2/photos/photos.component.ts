@@ -14,12 +14,11 @@ export class PhotosComponent implements OnInit {
   constructor(private router: ActivatedRoute, public userService: UsersService) { }
 
   ngOnInit() {
-    this.router.paramMap.subscribe(params => {
-      this.userService.getPhotosForUser(params.params.id).subscribe(photos => {
+    const dataId = this.router.snapshot.paramMap.get('id');
+      this.userService.getPhotosForUser(parseInt(dataId, 10)).subscribe(photos => {
         console.log(photos);
         this.photos = photos;
       });
-    });
   }
 
 }

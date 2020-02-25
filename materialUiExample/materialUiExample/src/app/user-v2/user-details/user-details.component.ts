@@ -15,11 +15,13 @@ export class UserDetailsComponent implements OnInit {
   constructor(private router: ActivatedRoute, public userService: UsersService) { }
 
   ngOnInit() {
+    const dataId = this.router.snapshot.paramMap.get('id');
+    this.userService.getUserById(parseInt(dataId,10)).subscribe(detail => {
+      console.log(detail);
+      this.userDetail = detail;
+    });
+
     this.router.paramMap.subscribe(params => {
-      this.userService.getUserById(params.params.id).subscribe(detail => {
-        console.log(detail);
-        this.userDetail = detail;
-      });
     });
   }
   async albumUser(idUser) {
