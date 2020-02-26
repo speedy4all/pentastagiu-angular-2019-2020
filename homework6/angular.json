@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "homework50": {
+    "homework5": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/homework50",
+            "outputPath": "dist/homework5",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "homework50:build"
+            "browserTarget": "homework5:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "homework50:build:production"
+              "browserTarget": "homework5:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "homework50:build"
+            "browserTarget": "homework5:build"
           }
         },
         "test": {
@@ -107,7 +107,7 @@
         }
       }
     },
-    "homework50-e2e": {
+    "homework5-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -116,11 +116,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "homework50:serve"
+            "devServerTarget": "homework5:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "homework50:serve:production"
+              "devServerTarget": "homework5:serve:production"
             }
           }
         },
@@ -136,5 +136,5 @@
       }
     }
   },
-  "defaultProject": "homework50"
+  "defaultProject": "homework5"
 }
