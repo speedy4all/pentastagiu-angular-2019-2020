@@ -1,0 +1,23 @@
+<div class="user-detail" *ngIf="userDetail">
+
+  <table>
+    <tr>
+      <th align="left">ID:</th>
+      <th align="left">Name:</th>
+      <th align="left">Username:</th>
+      <th align="left">Email:</th>
+      <th align="left">Address:</th>
+      <th align="left">Address - geo:</th>
+    </tr>
+
+    <tr>
+      <td>{{userDetail.id}}</td>
+      <td>{{userDetail.name}}</td>
+      <td>{{userDetail.username}}</td>
+      <td>{{userDetail.address.city}}</td>
+      <td>{{userDetail.address.geo.lat}} - {{userDetail.address.geo.lng}}</td>
+    </tr>
+
+  </table>
+
+</div>
