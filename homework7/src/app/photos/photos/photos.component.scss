@@ -1,0 +1,23 @@
+.photo-card {
+  margin: 10px;
+  padding: 10px;
+  display: inline-block;
+  -webkit-box-shadow: 9px 10px 22px -15px rgba(0,0,0,0.75);
+  -moz-box-shadow: 9px 10px 22px -15px rgba(0,0,0,0.75);
+  box-shadow: 9px 10px 22px -15px rgba(0,0,0,0.75);
+}
+
+.photo {
+  height: 350px;
+  width: 350px;
+}
+
+.photo-name {
+  font-weight: bolder;
+  max-width: 350px;
+}
+
+.photo-url {
+  font-style: italic;
+  max-width: 350px;
+}

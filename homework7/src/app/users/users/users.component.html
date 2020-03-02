@@ -1,3 +1,19 @@
-<p>
-  users works!
-</p>
+<div>
+
+  <table id="user-details">
+    <tr class="table-row-header">
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>City</th>
+    </tr>
+
+    <tr *ngFor="let user of users$ | async" class="table-row-text">
+      <td>{{user.name}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.address.city}}</td>
+    </tr>
+  </table>
+
+</div>

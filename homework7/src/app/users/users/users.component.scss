@@ -1,0 +1,21 @@
+#user-details {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#user-details td, #user-details th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#user-details tr:nth-child(even){background-color: #e5fbf6;}
+
+#user-details tr:hover {background-color: #fff4f3;}
+
+#user-details th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #19a383;
+  color: white;
+}

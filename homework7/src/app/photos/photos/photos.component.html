@@ -1,3 +1,5 @@
-<p>
-  photos works!
-</p>
+<div class="photo-card" *ngFor="let photo of photos$ | async">
+  <div class="photo-name">{{photo.title}}</div>
+  <div class="photo-url">{{photo.url}}</div>
+  <img class="photo" src="{{photo.url}}">
+</div>
