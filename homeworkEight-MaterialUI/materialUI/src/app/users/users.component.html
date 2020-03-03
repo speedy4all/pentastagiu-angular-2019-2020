@@ -9,12 +9,12 @@
         <h2>Email</h2>
       </th>
     </tr>
-    <tr *ngFor="let user of people$ | async;let i=index">
+    <tr *ngFor="let user of dataUser | async">
       <td>
         <mat-card class="namecard">
           <mat-card-header>
             <mat-card-title>{{user.name}}</mat-card-title>
-          <img class="avatar" *ngFor="let photo of photos$[i] | async" src="{{photo.url}}">
+          <img class="avatar">
           </mat-card-header>
         </mat-card>
       </td>
