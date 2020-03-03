@@ -1,3 +1,13 @@
-<mat-card class="user-card">
+<mat-card class="user-card" *ngFor="let user of users$ |async">
+  <mat-card-content>
+    <mat-card-title  class="username" (click)="openDialog()">
+      <i class="material-icons person">person</i>
+      {{user.username}}</mat-card-title>
+    <mat-card-subtitle>{{user.name}}</mat-card-subtitle>
+  </mat-card-content>
+  <span class="example-spacer"></span>
+  <mat-card-actions>
+    <button mat-raised-button color="basic">Go to albums</button>
+  </mat-card-actions>
 
 </mat-card>

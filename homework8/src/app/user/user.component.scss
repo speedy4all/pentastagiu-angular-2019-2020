@@ -1,5 +1,20 @@
 .user-card {
   max-height: 300px;
-  width: 300px;
+  width: 350px;
   margin: 30px 30px;
+  display: flex;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.username {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.person {
+  margin-right: 7px;
 }

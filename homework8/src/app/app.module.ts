@@ -10,7 +10,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {A11yModule} from '@angular/cdk/a11y';
 import {HomeComponent} from './home/home.component';
-import {MatCardModule} from "@angular/material/card";
+import {MatCardModule} from '@angular/material/card';
+import {HttpClientModule} from '@angular/common/http';
+import {MatButtonModule} from '@angular/material/button';
+import {UserDialogComponent} from './user/user-dialog/user-dialog.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -19,7 +25,8 @@ import {MatCardModule} from "@angular/material/card";
     UserComponent,
     AlbumComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    UserDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +36,11 @@ import {MatCardModule} from "@angular/material/card";
     MatIconModule,
     A11yModule,
     MatCardModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

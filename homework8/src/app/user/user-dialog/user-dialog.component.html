@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>User details</h1>
+
+
+<div mat-dialog-content>
+  <div *ngFor="let user of users$ |async">
+    <div>Name: {{user.name}}</div>
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+
+</div>
+
+
+
+
+
+
