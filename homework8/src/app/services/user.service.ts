@@ -31,10 +31,17 @@ export interface User {
 })
 export class UserService {
 
-  constructor( private http: HttpClient) {
+  public userUrl = 'https://jsonplaceholder.typicode.com/users';
+
+  constructor(private http: HttpClient) {
   }
 
   getUserList(): Observable<User[]> {
-    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
+    return this.http.get<User[]>(this.userUrl);
   }
+
+  getUserId(id: string): Observable<User[]> {
+    return this.http.get<User[]>(`${this.userUrl}?id=${id}`);
+  }
+
 }

@@ -2,13 +2,15 @@
 
 
 <div mat-dialog-content>
-  <div *ngFor="let user of users$ |async">
-    <div>Name: {{user.name}}</div>
-  </div>
+  <div>Name: {{data.name}}</div>
+  <div>Id: {{data.id}}</div>
+  <div>Username: {{data.username}}</div>
+  <div>Email: {{data.email}}</div>
+  <div>Address: {{data.address.street}}, {{data.address.zipcode}}, {{data.address.city}}</div>
 </div>
-
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
+
+  <button mat-button (click)="onNoClick()">Oki doki</button>
 
 </div>
 

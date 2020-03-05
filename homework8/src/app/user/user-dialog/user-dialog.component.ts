@@ -15,17 +15,17 @@ export class UserDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<UserDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: User,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     public userService: UserService
   ) {
   }
 
   ngOnInit(): void {
-    this.users$ = this.userService.getUserList();
+    // this.users$ = this.userService.getUserList();
   }
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+  //
+  // onNoClick(): void {
+  //   this.dialogRef.close();
+  // }
 
 }

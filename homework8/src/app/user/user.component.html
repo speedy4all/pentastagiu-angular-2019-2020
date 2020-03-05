@@ -1,6 +1,6 @@
 <mat-card class="user-card" *ngFor="let user of users$ |async">
   <mat-card-content>
-    <mat-card-title  class="username" (click)="openDialog()">
+    <mat-card-title  class="username" (click)="openDialog(user.id)">
       <i class="material-icons person">person</i>
       {{user.username}}</mat-card-title>
     <mat-card-subtitle>{{user.name}}</mat-card-subtitle>
