@@ -1,8 +1,15 @@
-<div>
-  <h1>OurLittleApp</h1>
-  <a routerLink="users">Users</a>
-  <span>&nbsp;</span>
-  <a routerLink="photos">Photos</a>
-</div>
-
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+  <h1>{{title}}</h1>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #snav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item routerLink="users">Users</a>
+      <a mat-list-item routerLink="photos">Photos</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

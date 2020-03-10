@@ -5,13 +5,15 @@ import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
 import { UsersService } from './users.service';
 import { UserDetailsComponent } from './user-details/user-details.component';
+import { AngularMaterialModule } from '../angular-material/angular-material.module';
 
 
 @NgModule({
   declarations: [UsersComponent, UserDetailsComponent],
   imports: [
     CommonModule,
-    UsersRoutingModule
+    UsersRoutingModule,
+    AngularMaterialModule
   ],
   providers: [
     UsersService

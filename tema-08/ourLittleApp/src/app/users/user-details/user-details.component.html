@@ -1,10 +1,28 @@
-<div *ngIf="userDetails">
-    <h1>{{userDetails.name}}</h1>
-    <p>Username: {{userDetails.username}}</p>
-    <p>E-mail: {{userDetails.email}}</p>
-    <p>Address: {{userDetails.address.street}}</p>
-    <p>City: {{userDetails.address.city}}</p>
-    <p>ZIP Code: {{userDetails.address.zipcode}}</p>
-    <p>Phone: {{userDetails.phone}}</p>
-    <p>Website: {{userDetails.website}}</p>
-</div>
+<mat-card *ngIf="userDetails">
+    <mat-card-title>{{userDetails.name}}</mat-card-title>
+    <mat-card-subtitle>Username: {{userDetails.username}}</mat-card-subtitle>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item>
+                <mat-icon matListIcon>alternate_email</mat-icon>
+                <span>E-mail: {{userDetails.email}}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListIcon>home</mat-icon>
+                <span>Address: {{userDetails.address.street}}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListIcon>location_city</mat-icon>
+                <span>City: {{userDetails.address.city}}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListIcon>phone</mat-icon>
+                <span>Phone: {{userDetails.phone}}</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon matListIcon>http</mat-icon>
+                <span>Website: {{userDetails.website}}</span>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

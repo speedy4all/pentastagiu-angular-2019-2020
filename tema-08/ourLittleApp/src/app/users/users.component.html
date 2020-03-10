@@ -1,7 +1,7 @@
 <h1>Users</h1>
-
-<div *ngFor="let user of users">
-    <a [routerLink]="[user.id]">{{user.name}}</a>
-</div>
-
+<mat-list role="list">
+    <mat-list-item *ngFor="let user of users">
+        <a [routerLink]="[user.id]">{{user.name}}</a>
+    </mat-list-item>
+</mat-list>
 <router-outlet></router-outlet>
