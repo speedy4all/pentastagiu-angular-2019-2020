@@ -1,6 +1,6 @@
 <div *ngIf="userDetails">
     <h1>User: {{ userDetails.name }}</h1>
-    <button (click)="albumUser(userDetails.id)">Show Albums</button>
+    <h2>Albums:</h2>
     <div *ngFor="let album of albums">
         {{ album.title }}
         <a routerLink="/photos/{{album.userId}}/album/photos/{{album.id}}">Photos</a>

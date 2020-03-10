@@ -24,12 +24,11 @@ export class AlbumsComponent implements OnInit {
 
     this.router.paramMap.subscribe(params => {
     });
-  }
 
-  async albumUser(userId: any) {
-    this.userApi.getAlbumsForUser(userId).subscribe(album => {
+    this.userApi.getAlbumsForUser(parseInt(dataId, 10)).subscribe(album => {
       this.albums = album;
     });
+
   }
 
 }
