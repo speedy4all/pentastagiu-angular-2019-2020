@@ -1,0 +1,7 @@
+<h1>Photos by User</h1>
+
+<div *ngFor="let user of users">
+    {{user.name}} <button (click)="detailUser(user.id)">Albums</button>
+</div>
+
+<router-outlet></router-outlet>
